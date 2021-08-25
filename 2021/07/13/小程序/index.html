@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="vant 小程序环境搭建 git clone clone 代码到本地 npm i 安装 @vant&#x2F;weapp 依赖包 小程序开发者工具导入项目生成 project.config.json; 小程序开发者工具 -&gt; 工具 -&gt; npm 构建  流程图graph TD start(安装依赖包) --&gt; step1[小程序开发者工具构建NPM] step1 --&gt; |构建成功会看到mini">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小程序">
+<meta property="og:url" content="https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.html">
+<meta property="og:site_name" content="魔女">
+<meta property="og:description" content="vant 小程序环境搭建 git clone clone 代码到本地 npm i 安装 @vant&#x2F;weapp 依赖包 小程序开发者工具导入项目生成 project.config.json; 小程序开发者工具 -&gt; 工具 -&gt; npm 构建  流程图graph TD start(安装依赖包) --&gt; step1[小程序开发者工具构建NPM] step1 --&gt; |构建成功会看到mini">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-13T10:12:45.673Z">
+<meta property="article:modified_time" content="2021-08-25T05:19:43.330Z">
+<meta property="article:author" content="Helen Zhang">
+<meta property="article:tag" content="小程序">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.jpeg">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo.jpeg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>小程序</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">魔女</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/07/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&text=小程序"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=小程序"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&is_video=false&description=小程序"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=小程序&body=Check out this article: https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=小程序"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=小程序"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=小程序"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=小程序"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&name=小程序&description=&lt;h2 id=&#34;vant-小程序环境搭建&#34;&gt;&lt;a href=&#34;#vant-小程序环境搭建&#34; class=&#34;headerlink&#34; title=&#34;vant 小程序环境搭建&#34;&gt;&lt;/a&gt;vant 小程序环境搭建&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git clone&lt;/code&gt; clone 代码到本地&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm i&lt;/code&gt; 安装 @vant/weapp 依赖包&lt;/li&gt;
+&lt;li&gt;小程序开发者工具导入项目生成 &lt;code&gt;project.config.json&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;小程序开发者工具 -&amp;gt; 工具 -&amp;gt; &lt;code&gt;npm 构建&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;流程图&#34;&gt;&lt;a href=&#34;#流程图&#34; class=&#34;headerlink&#34; title=&#34;流程图&#34;&gt;&lt;/a&gt;流程图&lt;/h3&gt;&lt;pre class=&#34;mermaid&#34;&gt;graph TD
+start(安装依赖包) --&gt; step1[小程序开发者工具&lt;b&gt;构建NPM&lt;/b&gt;]
+step1 --&gt; |构建成功会看到miniPrograme_npm| step2[编译]
+step2 --&gt; |遇error参考以下ERROR|step3(正常可看到首页)&lt;/pre&gt;
+
+&lt;h3 id=&#34;ERROR&#34;&gt;&lt;a href=&#34;#ERROR&#34; class=&#34;headerlink&#34; title=&#34;ERROR&#34;&gt;&lt;/a&gt;ERROR&lt;/h3&gt;&lt;h3 id=&#34;app-json-文件内容错误-app-json-“usingComponents”-“van-icon”-“-vant-weapp-icon-index”-未找到-env-Windows-mp-1-05-2107090-lib-2-18-0&#34;&gt;&lt;a href=&#34;#app-json-文件内容错误-app-json-“usingComponents”-“van-icon”-“-vant-weapp-icon-index”-未找到-env-Windows-mp-1-05-2107090-lib-2-18-0&#34; class=&#34;headerlink&#34; title=&#34;[ app.json 文件内容错误] app.json: [“usingComponents”][“van-icon”]: “@vant/weapp/icon/index” 未找到(env: Windows,mp,1.05.2107090; lib: 2.18.0)&#34;&gt;&lt;/a&gt;&lt;font color=&#34;#f33&#34;&gt;[ app.json 文件内容错误] app.json: [“usingComponents”][“van-icon”]: “@vant/weapp/icon/index” 未找到(env: Windows,mp,1.05.2107090; lib: 2.18.0)&lt;/font&gt;&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;npm install 安装 vant&lt;br&gt;微信开发者工具导入项目，会新增 &lt;code&gt;project.config.json&lt;/code&gt; 文件&lt;br&gt;微信开发者工具 -&amp;gt; 详情 -&amp;gt; 本地设置 —&amp;gt; “勾选 将 JS 编译成 ES5/ 勾选 使用 npm 模块”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;VM254-5-app-js错误&#34;&gt;&lt;a href=&#34;#VM254-5-app-js错误&#34; class=&#34;headerlink&#34; title=&#34;VM254:5 app.js错误:&#34;&gt;&lt;/a&gt;&lt;font color=&#34;#f33&#34;&gt;VM254:5 app.js错误:&lt;/font&gt;&lt;/h3&gt;&lt;p&gt;TypeError: Cannot read property ‘develop’ of undefined&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;确认是否是当前小程序的开发者，叵不是联系管理员在管理后台添加&lt;br&gt;查看开发者工具中详情 -&amp;gt; 配置 -&amp;gt; AppId 是否与&lt;code&gt;project.config.json&lt;/code&gt; 中的 appId 一致&lt;br&gt;&lt;br&gt;&lt;font color=&#34;#f99&#34;&gt;即： 开发者工具 appId 与 project.config.json appId 一致 + 你本人是当前小程序的开发者&lt;/font&gt;&lt;/p&gt;
+&lt;/blockquote&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vant-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">vant 小程序环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ERROR"><span class="toc-number">1.2.</span> <span class="toc-text">ERROR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-json-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E9%94%99%E8%AF%AF-app-json-%E2%80%9CusingComponents%E2%80%9D-%E2%80%9Cvan-icon%E2%80%9D-%E2%80%9C-vant-weapp-icon-index%E2%80%9D-%E6%9C%AA%E6%89%BE%E5%88%B0-env-Windows-mp-1-05-2107090-lib-2-18-0"><span class="toc-number">1.3.</span> <span class="toc-text">[ app.json 文件内容错误] app.json: [“usingComponents”][“van-icon”]: “@vant&#x2F;weapp&#x2F;icon&#x2F;index” 未找到(env: Windows,mp,1.05.2107090; lib: 2.18.0)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VM254-5-app-js%E9%94%99%E8%AF%AF"><span class="toc-number">1.4.</span> <span class="toc-text">VM254:5 app.js错误:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E4%BC%A0%E5%8F%82%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.</span> <span class="toc-text">小程传参注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#input-text-%E6%89%A9%E5%B1%95%E7%83%AD%E5%8C%BA%E5%8C%85%E5%90%AB-text-%E9%83%A8%E5%88%86"><span class="toc-number">3.</span> <span class="toc-text">input + text 扩展热区包含 text 部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%8D%93%E7%AB%AF-wx-redirectTo-%E8%B7%B3%E8%BD%AC%E5%90%8E%EF%BC%8C%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2-wx-redirectTo-%E4%B9%8B%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81%E8%BF%98%E4%BC%9A%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C"><span class="toc-number">4.</span> <span class="toc-text">安卓端 wx.redirectTo() 跳转后，当前页面 wx.redirectTo() 之后的代码还会继续执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">小程序调试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-getRealtimeLogManager-%E8%8E%B7%E5%8F%96%E5%AE%9E%E6%97%B6%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86%E5%AF%B9%E8%B1%A1"><span class="toc-number">5.1.</span> <span class="toc-text">wx.getRealtimeLogManager() 获取实时日志管理对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%94%BB%E6%9F%B1%E7%8A%B6%E5%9B%BE"><span class="toc-number">6.</span> <span class="toc-text">小程序画柱状图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vant-Weapp-1-3-3-%E4%B8%8E-Vant-Weapp-1-7-1"><span class="toc-number">7.</span> <span class="toc-text">Vant Weapp 1.3.3 与 Vant Weapp 1.7.1</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        小程序
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">魔女</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-07-13T10:12:45.673Z" itemprop="datePublished">2021-07-13</time>
+    </div>
+
+
+      
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">小程序</a></li></ul>
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="vant-小程序环境搭建"><a href="#vant-小程序环境搭建" class="headerlink" title="vant 小程序环境搭建"></a>vant 小程序环境搭建</h2><ol>
+<li><code>git clone</code> clone 代码到本地</li>
+<li><code>npm i</code> 安装 @vant/weapp 依赖包</li>
+<li>小程序开发者工具导入项目生成 <code>project.config.json</code>;</li>
+<li>小程序开发者工具 -&gt; 工具 -&gt; <code>npm 构建</code></li>
+</ol>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><pre class="mermaid">graph TD
+start(安装依赖包) --> step1[小程序开发者工具<b>构建NPM</b>]
+step1 --> |构建成功会看到miniPrograme_npm| step2[编译]
+step2 --> |遇error参考以下ERROR|step3(正常可看到首页)</pre>
+
+<h3 id="ERROR"><a href="#ERROR" class="headerlink" title="ERROR"></a>ERROR</h3><h3 id="app-json-文件内容错误-app-json-“usingComponents”-“van-icon”-“-vant-weapp-icon-index”-未找到-env-Windows-mp-1-05-2107090-lib-2-18-0"><a href="#app-json-文件内容错误-app-json-“usingComponents”-“van-icon”-“-vant-weapp-icon-index”-未找到-env-Windows-mp-1-05-2107090-lib-2-18-0" class="headerlink" title="[ app.json 文件内容错误] app.json: [“usingComponents”][“van-icon”]: “@vant/weapp/icon/index” 未找到(env: Windows,mp,1.05.2107090; lib: 2.18.0)"></a><font color="#f33">[ app.json 文件内容错误] app.json: [“usingComponents”][“van-icon”]: “@vant/weapp/icon/index” 未找到(env: Windows,mp,1.05.2107090; lib: 2.18.0)</font></h3><blockquote>
+<p>npm install 安装 vant<br>微信开发者工具导入项目，会新增 <code>project.config.json</code> 文件<br>微信开发者工具 -&gt; 详情 -&gt; 本地设置 —&gt; “勾选 将 JS 编译成 ES5/ 勾选 使用 npm 模块”</p>
+</blockquote>
+<h3 id="VM254-5-app-js错误"><a href="#VM254-5-app-js错误" class="headerlink" title="VM254:5 app.js错误:"></a><font color="#f33">VM254:5 app.js错误:</h3><p>TypeError: Cannot read property ‘develop’ of undefined</font></p>
+<blockquote>
+<p>确认是否是当前小程序的开发者，叵不是联系管理员在管理后台添加<br>查看开发者工具中详情 -&gt; 配置 -&gt; AppId 是否与<code>project.config.json</code> 中的 appId 一致</br><br><font color="#f99">即： 开发者工具 appId 与 project.config.json appId 一致 + 你本人是当前小程序的开发者</font></p>
+</blockquote>
+<h2 id="小程传参注意事项"><a href="#小程传参注意事项" class="headerlink" title="小程传参注意事项"></a><font color="#f33">小程传参注意事项</font></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">popup</span> <span class="attr">showGY</span>&gt;</span><span class="tag">&lt;/<span class="name">popup</span>&gt;</span></span><br><span class="line">/*</span><br><span class="line"> * 如上，传参默认为 true</span><br><span class="line"> * 正确传参如下</span><br><span class="line"> */</span><br><span class="line"><span class="tag">&lt;<span class="name">popup</span> <span class="attr">showGY</span>=<span class="string">&quot;&#123;&#123;showGY&#125;&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">popup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="input-text-扩展热区包含-text-部分"><a href="#input-text-扩展热区包含-text-部分" class="headerlink" title="input + text 扩展热区包含 text 部分"></a>input + text 扩展热区包含 text 部分</h2><blockquote>
+<p>将 text 部分内容提出文档流（position: absolute）</p>
+</blockquote>
+<h2 id="安卓端-wx-redirectTo-跳转后，当前页面-wx-redirectTo-之后的代码还会继续执行"><a href="#安卓端-wx-redirectTo-跳转后，当前页面-wx-redirectTo-之后的代码还会继续执行" class="headerlink" title="安卓端 wx.redirectTo() 跳转后，当前页面 wx.redirectTo() 之后的代码还会继续执行"></a><font color="#f33">安卓端 wx.redirectTo() 跳转后，当前页面 wx.redirectTo() 之后的代码还会继续执行</font></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 处理不同渠道的业务逻辑</span></span><br><span class="line"><span class="built_in">this</span>.resolve26711(source, res, res1);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 处理不同 type 类型的业务逻辑</span></span><br><span class="line"><span class="built_in">this</span>.resolveForType(res, type);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">resolve26711</span>(<span class="params"></span>)</span> &#123; </span><br><span class="line">  ...</span><br><span class="line">  wx.redirectTo(...);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">resolveForType</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">  wx.redirectTo(...)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="小程序调试"><a href="#小程序调试" class="headerlink" title="小程序调试"></a>小程序调试</h2><h3 id="wx-getRealtimeLogManager-获取实时日志管理对象"><a href="#wx-getRealtimeLogManager-获取实时日志管理对象" class="headerlink" title="wx.getRealtimeLogManager() 获取实时日志管理对象"></a>wx.getRealtimeLogManager() 获取实时日志管理对象</h3><blockquote>
+<p>返回 RealtimeLogManager 对象<br>日志可以上传至运维后台，可从小程序管理后台“开发-&gt;运维中心-&gt;实时日志”进入小程序端日志查询页面，或从“小程序插件-&gt;实时日志”进入插件端日志查询页面，进而查看开发者打印的日志信息</p>
+</blockquote>
+<h2 id="小程序画柱状图"><a href="#小程序画柱状图" class="headerlink" title="小程序画柱状图"></a>小程序画柱状图</h2><pre class="mermaid">graph TD
+start[index] --> A[bar-chart]</pre>
+<blockquote>
+<p>使用选择器选择组件实例节点，返回匹配到的第一个组件实例对象（会被 <code>wx://component-export</code> 影响）<br>this.selectComponent</p>
+</blockquote>
+<h2 id="Vant-Weapp-1-3-3-与-Vant-Weapp-1-7-1"><a href="#Vant-Weapp-1-3-3-与-Vant-Weapp-1-7-1" class="headerlink" title="Vant Weapp 1.3.3 与 Vant Weapp 1.7.1"></a>Vant Weapp 1.3.3 与 Vant Weapp 1.7.1</h2>
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vant-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">vant 小程序环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ERROR"><span class="toc-number">1.2.</span> <span class="toc-text">ERROR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-json-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E9%94%99%E8%AF%AF-app-json-%E2%80%9CusingComponents%E2%80%9D-%E2%80%9Cvan-icon%E2%80%9D-%E2%80%9C-vant-weapp-icon-index%E2%80%9D-%E6%9C%AA%E6%89%BE%E5%88%B0-env-Windows-mp-1-05-2107090-lib-2-18-0"><span class="toc-number">1.3.</span> <span class="toc-text">[ app.json 文件内容错误] app.json: [“usingComponents”][“van-icon”]: “@vant&#x2F;weapp&#x2F;icon&#x2F;index” 未找到(env: Windows,mp,1.05.2107090; lib: 2.18.0)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VM254-5-app-js%E9%94%99%E8%AF%AF"><span class="toc-number">1.4.</span> <span class="toc-text">VM254:5 app.js错误:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E4%BC%A0%E5%8F%82%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.</span> <span class="toc-text">小程传参注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#input-text-%E6%89%A9%E5%B1%95%E7%83%AD%E5%8C%BA%E5%8C%85%E5%90%AB-text-%E9%83%A8%E5%88%86"><span class="toc-number">3.</span> <span class="toc-text">input + text 扩展热区包含 text 部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%8D%93%E7%AB%AF-wx-redirectTo-%E8%B7%B3%E8%BD%AC%E5%90%8E%EF%BC%8C%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2-wx-redirectTo-%E4%B9%8B%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81%E8%BF%98%E4%BC%9A%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C"><span class="toc-number">4.</span> <span class="toc-text">安卓端 wx.redirectTo() 跳转后，当前页面 wx.redirectTo() 之后的代码还会继续执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">小程序调试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wx-getRealtimeLogManager-%E8%8E%B7%E5%8F%96%E5%AE%9E%E6%97%B6%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86%E5%AF%B9%E8%B1%A1"><span class="toc-number">5.1.</span> <span class="toc-text">wx.getRealtimeLogManager() 获取实时日志管理对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%94%BB%E6%9F%B1%E7%8A%B6%E5%9B%BE"><span class="toc-number">6.</span> <span class="toc-text">小程序画柱状图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vant-Weapp-1-3-3-%E4%B8%8E-Vant-Weapp-1-7-1"><span class="toc-number">7.</span> <span class="toc-text">Vant Weapp 1.3.3 与 Vant Weapp 1.7.1</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&text=小程序"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=小程序"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&is_video=false&description=小程序"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=小程序&body=Check out this article: https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=小程序"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=小程序"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=小程序"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&title=小程序"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&name=小程序&description=&lt;h2 id=&#34;vant-小程序环境搭建&#34;&gt;&lt;a href=&#34;#vant-小程序环境搭建&#34; class=&#34;headerlink&#34; title=&#34;vant 小程序环境搭建&#34;&gt;&lt;/a&gt;vant 小程序环境搭建&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git clone&lt;/code&gt; clone 代码到本地&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm i&lt;/code&gt; 安装 @vant/weapp 依赖包&lt;/li&gt;
+&lt;li&gt;小程序开发者工具导入项目生成 &lt;code&gt;project.config.json&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;小程序开发者工具 -&amp;gt; 工具 -&amp;gt; &lt;code&gt;npm 构建&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;流程图&#34;&gt;&lt;a href=&#34;#流程图&#34; class=&#34;headerlink&#34; title=&#34;流程图&#34;&gt;&lt;/a&gt;流程图&lt;/h3&gt;&lt;pre class=&#34;mermaid&#34;&gt;graph TD
+start(安装依赖包) --&gt; step1[小程序开发者工具&lt;b&gt;构建NPM&lt;/b&gt;]
+step1 --&gt; |构建成功会看到miniPrograme_npm| step2[编译]
+step2 --&gt; |遇error参考以下ERROR|step3(正常可看到首页)&lt;/pre&gt;
+
+&lt;h3 id=&#34;ERROR&#34;&gt;&lt;a href=&#34;#ERROR&#34; class=&#34;headerlink&#34; title=&#34;ERROR&#34;&gt;&lt;/a&gt;ERROR&lt;/h3&gt;&lt;h3 id=&#34;app-json-文件内容错误-app-json-“usingComponents”-“van-icon”-“-vant-weapp-icon-index”-未找到-env-Windows-mp-1-05-2107090-lib-2-18-0&#34;&gt;&lt;a href=&#34;#app-json-文件内容错误-app-json-“usingComponents”-“van-icon”-“-vant-weapp-icon-index”-未找到-env-Windows-mp-1-05-2107090-lib-2-18-0&#34; class=&#34;headerlink&#34; title=&#34;[ app.json 文件内容错误] app.json: [“usingComponents”][“van-icon”]: “@vant/weapp/icon/index” 未找到(env: Windows,mp,1.05.2107090; lib: 2.18.0)&#34;&gt;&lt;/a&gt;&lt;font color=&#34;#f33&#34;&gt;[ app.json 文件内容错误] app.json: [“usingComponents”][“van-icon”]: “@vant/weapp/icon/index” 未找到(env: Windows,mp,1.05.2107090; lib: 2.18.0)&lt;/font&gt;&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;npm install 安装 vant&lt;br&gt;微信开发者工具导入项目，会新增 &lt;code&gt;project.config.json&lt;/code&gt; 文件&lt;br&gt;微信开发者工具 -&amp;gt; 详情 -&amp;gt; 本地设置 —&amp;gt; “勾选 将 JS 编译成 ES5/ 勾选 使用 npm 模块”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;VM254-5-app-js错误&#34;&gt;&lt;a href=&#34;#VM254-5-app-js错误&#34; class=&#34;headerlink&#34; title=&#34;VM254:5 app.js错误:&#34;&gt;&lt;/a&gt;&lt;font color=&#34;#f33&#34;&gt;VM254:5 app.js错误:&lt;/font&gt;&lt;/h3&gt;&lt;p&gt;TypeError: Cannot read property ‘develop’ of undefined&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;确认是否是当前小程序的开发者，叵不是联系管理员在管理后台添加&lt;br&gt;查看开发者工具中详情 -&amp;gt; 配置 -&amp;gt; AppId 是否与&lt;code&gt;project.config.json&lt;/code&gt; 中的 appId 一致&lt;br&gt;&lt;br&gt;&lt;font color=&#34;#f99&#34;&gt;即： 开发者工具 appId 与 project.config.json appId 一致 + 你本人是当前小程序的开发者&lt;/font&gt;&lt;/p&gt;
+&lt;/blockquote&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 Helen Zhang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+      if (window.mermaid) {
+          mermaid.initialize({theme: 'forest'});
+      }
+  </script>
+
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
