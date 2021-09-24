@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="性能标准  是否使用废弃接口   过大的 WXML 节点  节点数 1000， 节点树深度少于 30 层，子节点数不大于 60 个 节点会增加内存使用，样式重排时间也会增长    避免使用 :active 实现点击态，易触发，滚动滑动时点击态不会消失，体验差。使用小程序内置组件 hover-*来实现 1234&lt;button	  hover-class&#x3D;&quot;van-action-she">
+<meta property="og:type" content="article">
+<meta property="og:title" content="性能优化——小程序">
+<meta property="og:url" content="https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/index.html">
+<meta property="og:site_name" content="魔女">
+<meta property="og:description" content="性能标准  是否使用废弃接口   过大的 WXML 节点  节点数 1000， 节点树深度少于 30 层，子节点数不大于 60 个 节点会增加内存使用，样式重排时间也会增长    避免使用 :active 实现点击态，易触发，滚动滑动时点击态不会消失，体验差。使用小程序内置组件 hover-*来实现 1234&lt;button	  hover-class&#x3D;&quot;van-action-she">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-23T05:26:17.769Z">
+<meta property="article:modified_time" content="2021-09-23T08:36:14.428Z">
+<meta property="article:author" content="Helen Zhang">
+<meta property="article:tag" content="小程序">
+<meta property="article:tag" content="性能">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.jpeg">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo.jpeg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>性能优化——小程序</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">魔女</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/07/13/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&text=性能优化——小程序"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&title=性能优化——小程序"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&is_video=false&description=性能优化——小程序"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=性能优化——小程序&body=Check out this article: https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&title=性能优化——小程序"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&title=性能优化——小程序"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&title=性能优化——小程序"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&title=性能优化——小程序"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&name=性能优化——小程序&description=&lt;h3 id=&#34;性能标准&#34;&gt;&lt;a href=&#34;#性能标准&#34; class=&#34;headerlink&#34; title=&#34;性能标准&#34;&gt;&lt;/a&gt;性能标准&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;是否使用废弃接口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;过大的 WXML 节点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;节点数 1000， 节点树深度少于 30 层，子节点数不大于 60 个 &lt;strong&gt;节点会增加内存使用，样式&lt;u&gt;重排时间&lt;/u&gt;也会增长&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免使用 &lt;code&gt;:active&lt;/code&gt; 实现点击态，易触发，滚动滑动时点击态不会消失，体验差。&lt;strong&gt;使用小程序内置组件 &lt;code&gt;hover-*&lt;/code&gt;&lt;/strong&gt;来实现&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;button&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;	  &lt;span class=&#34;attr&#34;&gt;hover-class&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;van-action-sheet__item--hover&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  hover-class&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免执行脚本的耗时过长，卡顿&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免首屏时间太长的情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首屏时间太长会导致用户长时间看到的都是白屏，会一直等待有意义的内容展示出来。出现这一情况，应仔细检查这个过程都有哪个操作，一般来说，可能是&lt;strong&gt;请求数据的时间太长&lt;/strong&gt;，或者是一次&lt;strong&gt;渲染的数据太大&lt;/strong&gt;导致渲染时间太长。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;网络图片资源应开启 HTTP 缓存控制，加载同样的图片，会直接从缓存读取，提升加载速度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;应让图片按原图宽高比例显示 —— 可根据情况设置 image 组件的 mode 属性，以保持原图宽高比&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;底部的可交互组件如果渲染在iPhone X的安全区域外，容易误触Home Indicator&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免出现任何 JavaScript 异常&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免存在图片太大而有效显示区域较小 —— 图片太大会增加下载时间和内存的消耗，应根据显示区域大小合理控制图片大小&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;滚动区域可开启惯性滚动以增强体验 —— 惯性滚动会使滚动比较顺畅，在安卓下默认有惯性滚动，而在 iOS 下需要额外设置 &lt;code&gt;-webkit-overflow-scrolling: touch&lt;/code&gt; 的样式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免渲染界面的耗时过长的情况 —— 渲染界面的耗时过长会让用户觉得卡顿，体验较差，出现这一情况时，需要校验下是否同时渲染的区域太大&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;对网络请求做必要的缓存以避免多余的请求 —— 尽量避免多余的请求，比如对同样的请求进行缓存&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;所有请求的耗时不应太久 —— 优化好服务器处理时间、减小回包大小，让请求快速响应&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免 setData 的调用过于频繁&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;setData接口的调用涉及逻辑层与渲染层间的线程通过，通信过于频繁可能导致处理队列阻塞，界面渲染不及时而导致卡顿，应避免无用的频繁调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免 setData 的数据过大 —— 由于小程序运行逻辑线程与渲染线程之上，setData的调用会把数据从逻辑层传到渲染层，数据太大会增加通信时间&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免将未绑定在 WXML 的变量传入 setData —— setData操作会引起框架处理一些渲染界面相关的工作，一个未绑定的变量意味着与界面渲染无关，传入setData会造成不必要的性能消耗&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免定时器未跟随页面回收 —— 定时器是全局的，并不是跟页面绑定的，当小程序从一个页面路由到另一个页面之后，前一个页面定时器应注意手动回收&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免短时间内发起太多的图片请求 —— 短时间内发起太多图片请求会触发浏览器并行加载的限制，可能导致图片加载慢，用户一直处理等待。应该合理控制数量，可考虑使用雪碧图技术、拆分域名或在屏幕外的图片使用懒加载&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免短时间内发起太多的请求 —— 短时间内发起太多请求会触发小程序并行请求数量的限制，同时太多请求也可能导致加载慢等问题，应合理控制请求数量，甚至做请求的合并等&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;所有资源请求都建议使用 HTTPS —— 使用 HTTPS，可以让你的小程序更加安全，而 HTTP 是明文传输的，存在可能被篡改内容的风险&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免引入大量未被使用的样式 —— 我们应该按需引入 wxss 资源，如果小程序中存在大量未使用的样式，会增加小程序包体积大小，从而在一定程度上影响加载速度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免将不可能被访问到的页面打包在小程序包里 - 小程序的包大小会影响加载时间，应该尽量控制包体积大小，避免将不会被使用的文件打包进去&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%A0%87%E5%87%86"><span class="toc-number">1.</span> <span class="toc-text">性能标准</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        性能优化——小程序
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">魔女</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-09-23T05:26:17.769Z" itemprop="datePublished">2021-09-23</time>
+    </div>
+
+
+      
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">小程序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li></ul>
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="性能标准"><a href="#性能标准" class="headerlink" title="性能标准"></a>性能标准</h3><ul>
+<li><input disabled="" type="checkbox"> <p>是否使用废弃接口</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>过大的 WXML 节点</p>
+<ul>
+<li>节点数 1000， 节点树深度少于 30 层，子节点数不大于 60 个 <strong>节点会增加内存使用，样式<u>重排时间</u>也会增长</strong></li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免使用 <code>:active</code> 实现点击态，易触发，滚动滑动时点击态不会消失，体验差。<strong>使用小程序内置组件 <code>hover-*</code></strong>来实现</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span></span></span><br><span class="line"><span class="tag">	  <span class="attr">hover-class</span>=<span class="string">&quot;van-action-sheet__item--hover&quot;</span>&gt;</span></span><br><span class="line">  hover-class</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><input disabled="" type="checkbox"> <p>避免执行脚本的耗时过长，卡顿</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免首屏时间太长的情况</p>
+<ul>
+<li>首屏时间太长会导致用户长时间看到的都是白屏，会一直等待有意义的内容展示出来。出现这一情况，应仔细检查这个过程都有哪个操作，一般来说，可能是<strong>请求数据的时间太长</strong>，或者是一次<strong>渲染的数据太大</strong>导致渲染时间太长。</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <p>网络图片资源应开启 HTTP 缓存控制，加载同样的图片，会直接从缓存读取，提升加载速度</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>应让图片按原图宽高比例显示 —— 可根据情况设置 image 组件的 mode 属性，以保持原图宽高比</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>底部的可交互组件如果渲染在iPhone X的安全区域外，容易误触Home Indicator</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免出现任何 JavaScript 异常</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免存在图片太大而有效显示区域较小 —— 图片太大会增加下载时间和内存的消耗，应根据显示区域大小合理控制图片大小</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>滚动区域可开启惯性滚动以增强体验 —— 惯性滚动会使滚动比较顺畅，在安卓下默认有惯性滚动，而在 iOS 下需要额外设置 <code>-webkit-overflow-scrolling: touch</code> 的样式</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免渲染界面的耗时过长的情况 —— 渲染界面的耗时过长会让用户觉得卡顿，体验较差，出现这一情况时，需要校验下是否同时渲染的区域太大</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>对网络请求做必要的缓存以避免多余的请求 —— 尽量避免多余的请求，比如对同样的请求进行缓存</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>所有请求的耗时不应太久 —— 优化好服务器处理时间、减小回包大小，让请求快速响应</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免 setData 的调用过于频繁</p>
+<ul>
+<li>setData接口的调用涉及逻辑层与渲染层间的线程通过，通信过于频繁可能导致处理队列阻塞，界面渲染不及时而导致卡顿，应避免无用的频繁调用</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免 setData 的数据过大 —— 由于小程序运行逻辑线程与渲染线程之上，setData的调用会把数据从逻辑层传到渲染层，数据太大会增加通信时间</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免将未绑定在 WXML 的变量传入 setData —— setData操作会引起框架处理一些渲染界面相关的工作，一个未绑定的变量意味着与界面渲染无关，传入setData会造成不必要的性能消耗</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免定时器未跟随页面回收 —— 定时器是全局的，并不是跟页面绑定的，当小程序从一个页面路由到另一个页面之后，前一个页面定时器应注意手动回收</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免短时间内发起太多的图片请求 —— 短时间内发起太多图片请求会触发浏览器并行加载的限制，可能导致图片加载慢，用户一直处理等待。应该合理控制数量，可考虑使用雪碧图技术、拆分域名或在屏幕外的图片使用懒加载</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免短时间内发起太多的请求 —— 短时间内发起太多请求会触发小程序并行请求数量的限制，同时太多请求也可能导致加载慢等问题，应合理控制请求数量，甚至做请求的合并等</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>所有资源请求都建议使用 HTTPS —— 使用 HTTPS，可以让你的小程序更加安全，而 HTTP 是明文传输的，存在可能被篡改内容的风险</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免引入大量未被使用的样式 —— 我们应该按需引入 wxss 资源，如果小程序中存在大量未使用的样式，会增加小程序包体积大小，从而在一定程度上影响加载速度</p>
+</li>
+<li><input disabled="" type="checkbox"> <p>避免将不可能被访问到的页面打包在小程序包里 - 小程序的包大小会影响加载时间，应该尽量控制包体积大小，避免将不会被使用的文件打包进去</p>
+</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%A0%87%E5%87%86"><span class="toc-number">1.</span> <span class="toc-text">性能标准</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&text=性能优化——小程序"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&title=性能优化——小程序"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&is_video=false&description=性能优化——小程序"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=性能优化——小程序&body=Check out this article: https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&title=性能优化——小程序"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&title=性能优化——小程序"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&title=性能优化——小程序"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&title=性能优化——小程序"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2021/09/23/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%A0%87%E5%87%86/&name=性能优化——小程序&description=&lt;h3 id=&#34;性能标准&#34;&gt;&lt;a href=&#34;#性能标准&#34; class=&#34;headerlink&#34; title=&#34;性能标准&#34;&gt;&lt;/a&gt;性能标准&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;是否使用废弃接口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;过大的 WXML 节点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;节点数 1000， 节点树深度少于 30 层，子节点数不大于 60 个 &lt;strong&gt;节点会增加内存使用，样式&lt;u&gt;重排时间&lt;/u&gt;也会增长&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免使用 &lt;code&gt;:active&lt;/code&gt; 实现点击态，易触发，滚动滑动时点击态不会消失，体验差。&lt;strong&gt;使用小程序内置组件 &lt;code&gt;hover-*&lt;/code&gt;&lt;/strong&gt;来实现&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;button&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;	  &lt;span class=&#34;attr&#34;&gt;hover-class&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;van-action-sheet__item--hover&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  hover-class&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免执行脚本的耗时过长，卡顿&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免首屏时间太长的情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首屏时间太长会导致用户长时间看到的都是白屏，会一直等待有意义的内容展示出来。出现这一情况，应仔细检查这个过程都有哪个操作，一般来说，可能是&lt;strong&gt;请求数据的时间太长&lt;/strong&gt;，或者是一次&lt;strong&gt;渲染的数据太大&lt;/strong&gt;导致渲染时间太长。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;网络图片资源应开启 HTTP 缓存控制，加载同样的图片，会直接从缓存读取，提升加载速度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;应让图片按原图宽高比例显示 —— 可根据情况设置 image 组件的 mode 属性，以保持原图宽高比&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;底部的可交互组件如果渲染在iPhone X的安全区域外，容易误触Home Indicator&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免出现任何 JavaScript 异常&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免存在图片太大而有效显示区域较小 —— 图片太大会增加下载时间和内存的消耗，应根据显示区域大小合理控制图片大小&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;滚动区域可开启惯性滚动以增强体验 —— 惯性滚动会使滚动比较顺畅，在安卓下默认有惯性滚动，而在 iOS 下需要额外设置 &lt;code&gt;-webkit-overflow-scrolling: touch&lt;/code&gt; 的样式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免渲染界面的耗时过长的情况 —— 渲染界面的耗时过长会让用户觉得卡顿，体验较差，出现这一情况时，需要校验下是否同时渲染的区域太大&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;对网络请求做必要的缓存以避免多余的请求 —— 尽量避免多余的请求，比如对同样的请求进行缓存&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;所有请求的耗时不应太久 —— 优化好服务器处理时间、减小回包大小，让请求快速响应&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免 setData 的调用过于频繁&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;setData接口的调用涉及逻辑层与渲染层间的线程通过，通信过于频繁可能导致处理队列阻塞，界面渲染不及时而导致卡顿，应避免无用的频繁调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免 setData 的数据过大 —— 由于小程序运行逻辑线程与渲染线程之上，setData的调用会把数据从逻辑层传到渲染层，数据太大会增加通信时间&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免将未绑定在 WXML 的变量传入 setData —— setData操作会引起框架处理一些渲染界面相关的工作，一个未绑定的变量意味着与界面渲染无关，传入setData会造成不必要的性能消耗&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免定时器未跟随页面回收 —— 定时器是全局的，并不是跟页面绑定的，当小程序从一个页面路由到另一个页面之后，前一个页面定时器应注意手动回收&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免短时间内发起太多的图片请求 —— 短时间内发起太多图片请求会触发浏览器并行加载的限制，可能导致图片加载慢，用户一直处理等待。应该合理控制数量，可考虑使用雪碧图技术、拆分域名或在屏幕外的图片使用懒加载&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免短时间内发起太多的请求 —— 短时间内发起太多请求会触发小程序并行请求数量的限制，同时太多请求也可能导致加载慢等问题，应合理控制请求数量，甚至做请求的合并等&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;所有资源请求都建议使用 HTTPS —— 使用 HTTPS，可以让你的小程序更加安全，而 HTTP 是明文传输的，存在可能被篡改内容的风险&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免引入大量未被使用的样式 —— 我们应该按需引入 wxss 资源，如果小程序中存在大量未使用的样式，会增加小程序包体积大小，从而在一定程度上影响加载速度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&#34;checkbox&#34;&gt; &lt;p&gt;避免将不可能被访问到的页面打包在小程序包里 - 小程序的包大小会影响加载时间，应该尽量控制包体积大小，避免将不会被使用的文件打包进去&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 Helen Zhang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+      if (window.mermaid) {
+          mermaid.initialize({theme: 'forest'});
+      }
+  </script>
+
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>

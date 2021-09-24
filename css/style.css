@@ -338,22 +338,22 @@
   letter-spacing: normal;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  color: #dedede;
+  color: #444;
   display: block;
 }
 .content h3 {
   font-size: 0.9rem;
   font-weight: bold;
   text-decoration: underline;
-  color: #dedede;
+  color: #444;
 }
 .content h4,
 .content h5,
 .content h6 {
   font-size: 0.9rem;
   font-weight: normal;
-  color: #ccc;
-  border-bottom: 1px dashed #ccc;
+  color: #333;
+  border-bottom: 1px dashed #333;
   display: inline;
   text-decoration: none;
 }
@@ -365,7 +365,7 @@
   margin-bottom: 0.5rem;
 }
 .content hr {
-  border: 1px dashed #ccc;
+  border: 1px dashed #333;
 }
 .content strong {
   font-weight: bold;
@@ -417,12 +417,12 @@
   font-size: 12px;
   border-collapse: collapse;
   text-align: left;
-  background: #262626;
+  background: #fff;
 }
 .content th {
   font-size: 13px;
   font-weight: bold;
-  color: #dedede;
+  color: #444;
   border-bottom: 1px dashed #ccc;
   padding: 8px 8px;
 }
@@ -437,11 +437,11 @@
 }
 html {
   height: 100%;
-  border-top: 2px solid #fff;
+  border-top: 2px solid #333;
 }
 body {
-  color: #fff;
-  background-color: #000;
+  color: #333;
+  background-color: #fff;
   font-size: 14px;
   font-family: "PingFang SC", Arial, "Microsoft YaHei", sans-serif, monospace, "Menlo";
   font-weight: 400;
@@ -456,7 +456,6 @@ body {
   padding: 0;
   height: auto;
   width: 100%;
-  background-image: url("../images/space_flight.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
@@ -469,6 +468,7 @@ li {
   flex: 1;
 }
 .content p {
+  display: inline-block;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
@@ -483,11 +483,11 @@ li {
 }
 .content a {
   text-decoration: none;
-  color: #fff;
+  color: #333;
   background-repeat: repeat-x;
   background-position: bottom;
   background-size: 100% 6px;
-  background-image: linear-gradient(transparent, transparent 5px, #fff 5px, #fff);
+  background-image: linear-gradient(transparent, transparent 5px, #333 5px, #333);
 }
 .content a:hover {
   background-image: linear-gradient(transparent, transparent 4px, #b22222 4px, #b22222);
@@ -565,7 +565,7 @@ li {
   line-height: 2rem;
   font-style: normal;
   font-weight: 700;
-  color: #fff;
+  color: #333;
   margin-top: 0;
   margin-bottom: 0;
   -moz-osx-font-smoothing: grayscale;
@@ -788,11 +788,11 @@ li {
   color: #b22222;
 }
 #header-post #toc .toc-level-1 {
-  color: #fff;
+  color: #333;
 }
 #header-post #toc .toc-level-2 {
   font-size: 0.9rem;
-  color: #fff;
+  color: #333;
 }
 #header-post #toc .toc-level-2:before {
   content: "#";
@@ -864,7 +864,7 @@ li {
   transition: opacity 0.2s;
   width: 100%;
   z-index: 5000000;
-  background: #050505;
+  background: #fff;
   border-top: 1px solid #666673;
 }
 #footer-post a {
@@ -960,11 +960,11 @@ li {
   color: #b22222;
 }
 #footer-post #toc-footer .toc-level-1 {
-  color: #fff;
+  color: #333;
 }
 #footer-post #toc-footer .toc-level-2 {
   font-size: 0.9rem;
-  color: #fff;
+  color: #333;
 }
 #footer-post #toc-footer .toc-level-2:before {
   content: "#";
@@ -1054,7 +1054,7 @@ article header .meta {
   margin-bottom: 1rem;
 }
 article header .meta * {
-  color: #ccc;
+  color: #333;
   font-size: 0.85rem;
 }
 article header .author {
@@ -1099,7 +1099,7 @@ article .content .video-container embed {
 }
 article .content blockquote {
   background: inherit;
-  color: #ccffb6;
+  color: #c2ab00;
   border-left: 0px solid #ccc;
   margin: 1rem 10px;
   padding: 0.5em 10px;
@@ -1109,7 +1109,7 @@ article .content blockquote p {
   margin: 0;
 }
 article .content blockquote:before {
-  color: #ccffb6;
+  color: #c2ab00;
   content: "\201C";
   font-size: 2em;
   line-height: 0.1em;
@@ -1400,7 +1400,7 @@ article .content .caption {
   width: 100%;
   margin: 0;
   padding-top: 1%;
-  color: #dedede;
+  color: #444;
   text-align: center;
 }
 .blogtitel {
@@ -1409,7 +1409,7 @@ article .content .caption {
   width: 100%;
   margin: 0;
   padding: 2%;
-  color: #dedede;
+  color: #444;
   text-align: center;
   font-size: 40px;
   font-family: "PingFang SC", Arial, "Microsoft YaHei", sans-serif, monospace, "Menlo";
@@ -2160,7 +2160,7 @@ pre code {
 }
 .highlight {
   font-family: monospace, "Menlo";
-  background: #262626;
+  background: #fff;
   -webkit-border-radius: 4px;
   border-radius: 7px;
   padding: 10px 15px;
