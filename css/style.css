@@ -523,7 +523,7 @@ li {
 }
 .width {
   width: 100%;
-  max-width: 50rem;
+  max-width: 70rem;
 }
 @media (max-width: 480px) {
   .px3 {
