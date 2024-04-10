@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Python 内置库 - turtlePython 库  Python内置库——Turtle Turtle 库是 Python 语言中一个很流行的图像绘制函数库。小乌龟在坐标系（横轴X，纵轴Y，坐标原点(0,0)）中，根据一组函数指令的控制，在平面坐标系中移动，根据运行轨迹进行绘图。   turtle 起始位置默认处于坐标原点(0,0) turtle 默认运行方向为 0º 方向（0º 方向为 3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-一级6">
+<meta property="og:url" content="https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/index.html">
+<meta property="og:site_name" content="魔女">
+<meta property="og:description" content="Python 内置库 - turtlePython 库  Python内置库——Turtle Turtle 库是 Python 语言中一个很流行的图像绘制函数库。小乌龟在坐标系（横轴X，纵轴Y，坐标原点(0,0)）中，根据一组函数指令的控制，在平面坐标系中移动，根据运行轨迹进行绘图。   turtle 起始位置默认处于坐标原点(0,0) turtle 默认运行方向为 0º 方向（0º 方向为 3">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-09T10:05:59.000Z">
+<meta property="article:modified_time" content="2024-04-09T12:58:58.190Z">
+<meta property="article:author" content="Helen Zhang">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.jpeg">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo.jpeg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Python-一级6</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">魔女</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i
+      class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/">
+              Home
+            </a></li>
+          
+          <li><a href="/about/">
+              About
+            </a></li>
+          
+          <li><a href="/archives/">
+              Writing
+            </a></li>
+          
+          <li><a href="/tags/">
+              Tags
+            </a></li>
+          
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">
+              Projects
+            </a></li>
+          
+      </ul>
+    </span>
+    <br />
+    <span id="actions">
+      <ul>
+        
+          <li><a class="icon" href="/2023/05/08/React-Props/"><i class="fa fa-chevron-left" aria-hidden="true"
+                onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+          
+            
+              <li><a class="icon" href="/2023/04/08/Python-%E4%B8%80%E7%BA%A75/"><i class="fa fa-chevron-right"
+                    aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a>
+              </li>
+              
+                <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
+                      class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();'
+                      onmouseout='$("#i-top").toggle();'></i></a></li>
+                <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true"
+                      onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();'
+                      onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&text=Python-一级6"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&title=Python-一级6"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&is_video=false&description=Python-一级6"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python-一级6&body=Check out this article: https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&title=Python-一级6"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&title=Python-一级6"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&title=Python-一级6"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&title=Python-一级6"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&name=Python-一级6&description=&lt;h1 id=&#34;Python-内置库-turtle&#34;&gt;&lt;a href=&#34;#Python-内置库-turtle&#34; class=&#34;headerlink&#34; title=&#34;Python 内置库 - turtle&#34;&gt;&lt;/a&gt;&lt;center&gt;Python 内置库 - turtle&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&#34;Python-库&#34;&gt;&lt;a href=&#34;#Python-库&#34; class=&#34;headerlink&#34; title=&#34;Python 库&#34;&gt;&lt;/a&gt;Python 库&lt;/h2&gt;&lt;img src=&#34;http://www.plantuml.com/plantuml/svg/XPJBJjj058RtVegHihQoI0HRn0A9QoCLgGl8OXnFi4aoW-o9AWj5OW6fa4g3GE6E82fDgKf3MP6QozFus3m6De6GSSVAMSpY_AFl_7FEp8pP75kyMYahDcSMNY9eaQ8Knjdiw2XQLL0ORuBNtVMwH_xcBxXfWhlxgaOHgfGZZ5B5OX4jzDDHJEOSRZ2QdggkE9nOQ8vneZ5M4ZPvxeNdxi1z0pQtWj_N_hSVqFZUtv6FrT5aTSPPYHX2vXFH43IkdtxMuUjUp_K0CiOio9ZJnC9sUjuWc391y4zSEBo4Fstlttc2vHXVb_7d2RMPDL5cdqNwxGsuxHwzt-raD96XFnRCaidL6O8jccXT1e_McYBC7SxSeBNsFlVKI1PhcSn_yo--615zv33LiIqwQFxrjpfmiHvir_tB5fpk9vzjIOASnNobp7ZPr8HqS7S0nu_3W8O4E5Ujv9nqsB6S4pSAQ_TFdLRGsH_6DQL3S2enP73LXiRjCEHRutjF1-eR_datUfEPJA4mqFNtwikowb64e_DFhYRJ7mGbBq6K4X7r3RXpuSj3s8u4IctmriH-2LLTC4nT9pIlgh6BfDIKCKBryEzv1W00&#34;&gt;
+
+&lt;h2 id=&#34;Python内置库——Turtle&#34;&gt;&lt;a href=&#34;#Python内置库——Turtle&#34; class=&#34;headerlink&#34; title=&#34;Python内置库——Turtle&#34;&gt;&lt;/a&gt;Python内置库——Turtle&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Turtle 库是 Python 语言中一个很流行的图像绘制函数库。小乌龟在坐标系（横轴X，纵轴Y，坐标原点(0,0)）中，根据一组函数指令的控制，在平面坐标系中移动，根据运行轨迹进行绘图。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;turtle 起始位置默认处于坐标原点(0,0)&lt;/li&gt;
+&lt;li&gt;turtle 默认运行方向为 0º 方向（0º 方向为 3 点钟方向）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;Python-中使用-Turtle-库&#34;&gt;&lt;a href=&#34;#Python-中使用-Turtle-库&#34; class=&#34;headerlink&#34; title=&#34;Python 中使用 Turtle 库&#34;&gt;&lt;/a&gt;Python 中使用 Turtle 库&lt;/h3&gt;&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; turtle &lt;span class=&#34;comment&#34;&gt;#导入 turtle 库，注意区分大小写&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;turtle.forward(&lt;span class=&#34;number&#34;&gt;100&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h4 id=&#34;turtle-forward-parameter&#34;&gt;&lt;a href=&#34;#turtle-forward-parameter&#34; class=&#34;headerlink&#34; title=&#34;turtle.forward(parameter)&#34;&gt;&lt;/a&gt;turtle.forward(parameter)&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;turtle 面向 0º 方向移动 100px&lt;/p&gt;
+&lt;/blockquote&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-%E5%86%85%E7%BD%AE%E5%BA%93-turtle"><span class="toc-number">1.</span> <span class="toc-text">Python 内置库 - turtle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">Python 库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E5%86%85%E7%BD%AE%E5%BA%93%E2%80%94%E2%80%94Turtle"><span class="toc-number">1.2.</span> <span class="toc-text">Python内置库——Turtle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-%E4%B8%AD%E4%BD%BF%E7%94%A8-Turtle-%E5%BA%93"><span class="toc-number">1.2.1.</span> <span class="toc-text">Python 中使用 Turtle 库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-forward-parameter"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">turtle.forward(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-backward-parameter"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">turtle.backward(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-left-parameter"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">turtle.left(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-right-parameter"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">turtle.right(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">综合应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%BB%E5%B8%83"><span class="toc-number">1.2.2.</span> <span class="toc-text">画布</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-%E5%8F%AF%E4%BB%A5%E8%AE%BE%E7%BD%AE%E7%94%BB%E5%B8%83%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%92%8C%E9%A2%9C%E8%89%B2"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">turtle 可以设置画布的大小和颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-%E5%88%9B%E5%BB%BA%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">turtle 创建变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-shape-parameter"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">turtle.shape(parameter)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%BB%E7%AC%94"><span class="toc-number">1.2.3.</span> <span class="toc-text">画笔</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-pensize-parameter"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">turtle.pensize(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-pencolor-parameter"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">turtle.pencolor(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-speed-parameter"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">turtle.speed(parameter)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-1"><span class="toc-number">1.2.4.</span> <span class="toc-text">综合应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-up"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">turtle.up()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-down"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">turtle.down()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-2"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">综合应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-goto-x-y"><span class="toc-number">1.2.4.4.</span> <span class="toc-text">turtle.goto(x,y)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-3"><span class="toc-number">1.2.4.5.</span> <span class="toc-text">综合应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-setx"><span class="toc-number">1.2.4.6.</span> <span class="toc-text">turtle.setx()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-4"><span class="toc-number">1.2.4.7.</span> <span class="toc-text">综合应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-sety"><span class="toc-number">1.2.4.8.</span> <span class="toc-text">turtle.sety()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-5"><span class="toc-number">1.2.4.9.</span> <span class="toc-text">综合应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-fillcolor-colorstring-%E5%A1%AB%E5%85%85%E9%A2%9C%E8%89%B2"><span class="toc-number">1.2.4.10.</span> <span class="toc-text">turtle.fillcolor(colorstring) 填充颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-color-color-color-%E5%90%8C%E6%97%B6%E8%AE%BE%E7%BD%AE%E7%AC%94%E4%B8%8E%E5%A1%AB%E5%85%85%E8%89%B2"><span class="toc-number">1.2.4.11.</span> <span class="toc-text">turtle.color(color, color) 同时设置笔与填充色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-6"><span class="toc-number">1.2.4.12.</span> <span class="toc-text">综合应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-circle-radius-%E7%94%BB%E5%9C%86"><span class="toc-number">1.2.4.13.</span> <span class="toc-text">turtle.circle(radius) 画圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-circle-size-steps-3-%E7%94%BB%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="toc-number">1.2.4.14.</span> <span class="toc-text">turtle.circle(size,steps&#x3D;3) 画三角形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-circle-120-180-%E7%94%BB%E5%8D%8A%E5%9C%86"><span class="toc-number">1.2.4.15.</span> <span class="toc-text">turtle.circle(120, 180) 画半圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-dot-size-None-color-%E7%94%BB%E5%9C%86%E7%82%B9"><span class="toc-number">1.2.4.16.</span> <span class="toc-text">turtle.dot(size&#x3D;None, color) 画圆点</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="header">
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Python-一级6
+    </h1>
+
+
+
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">
+            魔女
+                    
+          </span>
+        </span>
+        
+    <div class="postdate">
+        <time datetime="2023-04-09T10:05:59.000Z" itemprop="datePublished">2023-04-09</time>
+    </div>
+
+
+          
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+      </div>
+  </header>
+  
+
+    <div class="content" itemprop="articleBody">
+      <h1 id="Python-内置库-turtle"><a href="#Python-内置库-turtle" class="headerlink" title="Python 内置库 - turtle"></a><center>Python 内置库 - turtle</center></h1><h2 id="Python-库"><a href="#Python-库" class="headerlink" title="Python 库"></a>Python 库</h2><img  src=http://www.plantuml.com/plantuml/svg/XPJBJjj058RtVegHihQoI0HRn0A9QoCLgGl8OXnFi4aoW-o9AWj5OW6fa4g3GE6E82fDgKf3MP6QozFus3m6De6GSSVAMSpY_AFl_7FEp8pP75kyMYahDcSMNY9eaQ8Knjdiw2XQLL0ORuBNtVMwH_xcBxXfWhlxgaOHgfGZZ5B5OX4jzDDHJEOSRZ2QdggkE9nOQ8vneZ5M4ZPvxeNdxi1z0pQtWj_N_hSVqFZUtv6FrT5aTSPPYHX2vXFH43IkdtxMuUjUp_K0CiOio9ZJnC9sUjuWc391y4zSEBo4Fstlttc2vHXVb_7d2RMPDL5cdqNwxGsuxHwzt-raD96XFnRCaidL6O8jccXT1e_McYBC7SxSeBNsFlVKI1PhcSn_yo--615zv33LiIqwQFxrjpfmiHvir_tB5fpk9vzjIOASnNobp7ZPr8HqS7S0nu_3W8O4E5Ujv9nqsB6S4pSAQ_TFdLRGsH_6DQL3S2enP73LXiRjCEHRutjF1-eR_datUfEPJA4mqFNtwikowb64e_DFhYRJ7mGbBq6K4X7r3RXpuSj3s8u4IctmriH-2LLTC4nT9pIlgh6BfDIKCKBryEzv1W00>
+
+<h2 id="Python内置库——Turtle"><a href="#Python内置库——Turtle" class="headerlink" title="Python内置库——Turtle"></a>Python内置库——Turtle</h2><blockquote>
+<p>Turtle 库是 Python 语言中一个很流行的图像绘制函数库。小乌龟在坐标系（横轴X，纵轴Y，坐标原点(0,0)）中，根据一组函数指令的控制，在平面坐标系中移动，根据运行轨迹进行绘图。</p>
+</blockquote>
+<ul>
+<li>turtle 起始位置默认处于坐标原点(0,0)</li>
+<li>turtle 默认运行方向为 0º 方向（0º 方向为 3 点钟方向）</li>
+</ul>
+<h3 id="Python-中使用-Turtle-库"><a href="#Python-中使用-Turtle-库" class="headerlink" title="Python 中使用 Turtle 库"></a>Python 中使用 Turtle 库</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment">#导入 turtle 库，注意区分大小写</span></span><br><span class="line">turtle.forward(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-forward-parameter"><a href="#turtle-forward-parameter" class="headerlink" title="turtle.forward(parameter)"></a>turtle.forward(parameter)</h4><blockquote>
+<p>turtle 面向 0º 方向移动 100px</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment">#导入库</span></span><br><span class="line">turtle.forward(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-backward-parameter"><a href="#turtle-backward-parameter" class="headerlink" title="turtle.backward(parameter)"></a>turtle.backward(parameter)</h4><blockquote>
+<p>turtle 面向 0º 方向移动 100px</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment">#导入库</span></span><br><span class="line">turtle.backward(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-left-parameter"><a href="#turtle-left-parameter" class="headerlink" title="turtle.left(parameter)"></a>turtle.left(parameter)</h4><blockquote>
+<p>turtle 逆时针旋转 parameterº</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment">#导入库</span></span><br><span class="line">turtle.left(<span class="number">90</span>) <span class="comment">#turtle 面向正上方，12 点钟方向</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-right-parameter"><a href="#turtle-right-parameter" class="headerlink" title="turtle.right(parameter)"></a>turtle.right(parameter)</h4><blockquote>
+<p>turtle 顺时针旋转 parameterº</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment">#导入库</span></span><br><span class="line">turtle.right(<span class="number">90</span>) <span class="comment">#turtle 面向正下方，6 点钟方向</span></span><br></pre></td></tr></table></figure>
+
+<p><span class='custom-box custom-box-933'>思考：parameter 是否可以为负数</span></p>
+<h4 id="综合应用"><a href="#综合应用" class="headerlink" title="综合应用"></a>综合应用</h4><blockquote>
+<p>画一个距形</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment">#专入库</span></span><br><span class="line">turtle.forward(<span class="number">100</span>) <span class="comment">#面向 3 点钟方向，移动 100 px</span></span><br><span class="line">turtle.left(<span class="number">90</span>) <span class="comment">#turtle 面向 12 点钟方向</span></span><br><span class="line">turtle.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 12 点钟方向移动 100 px</span></span><br><span class="line">turtle.left(<span class="number">90</span>) <span class="comment">#turtle 面向 9 点钟方向</span></span><br><span class="line">turtle.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 9 点钟方向移动 100px</span></span><br><span class="line">turtle.left(<span class="number">90</span>) <span class="comment">#turtle 面向 6 点钟方向</span></span><br><span class="line">turtle.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 6 点钟方向移动 100px</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="画布"><a href="#画布" class="headerlink" title="画布"></a>画布</h3><p>Turtle 是用来绘制图像的，给制在哪的呢？绘制在画布上（Python Turtle Graphics）。也就是 turtle 为我们打开的绘制图像的区域。</p>
+<h4 id="turtle-可以设置画布的大小和颜色"><a href="#turtle-可以设置画布的大小和颜色" class="headerlink" title="turtle 可以设置画布的大小和颜色"></a>turtle 可以设置画布的大小和颜色</h4><blockquote>
+<p>turtle.screensize(width,height,”color”)，width 表示画布的宽，height 表示画布的高，color 表示画布的颜色<br><code>画布默认的大小为 400*300</code></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment">#导入 turtle 库</span></span><br><span class="line">turtle.screensize(<span class="number">500</span>,<span class="number">300</span>,<span class="string">&#x27;purple&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>turtle.setup(width,height,left,top) width 画布的宽，height 画布的高，left 表示的画布距离屏幕左侧的距离，top 表示画布距离屏幕顶部的距离</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment"># 导入 turtle 库</span></span><br><span class="line">turtle.setup(<span class="number">100</span>,<span class="number">100</span>,<span class="number">0</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-创建变量"><a href="#turtle-创建变量" class="headerlink" title="turtle 创建变量"></a>turtle 创建变量</h4><blockquote>
+<p>turtle.Turtle() 获取 turtle 对象<br>turtle.Pen() #获取 turtle 的画笔对象</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment">#专入库</span></span><br><span class="line"><span class="comment">#t = turtle.Turtle() #获取 turtle 对象</span></span><br><span class="line">t = turtle.Pen() <span class="comment">#获取 turtle 的画笔对象</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#面向 3 点钟方向，移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 12 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 12 点钟方向移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 9 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 9 点钟方向移动 100px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 6 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 6 点钟方向移动 100px</span></span><br><span class="line"><span class="comment">#t.screensize(100,100,&#x27;brown&#x27;) #Turtle&#x27; object has no attribute &#x27;screensize&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-shape-parameter"><a href="#turtle-shape-parameter" class="headerlink" title="turtle.shape(parameter)"></a>turtle.shape(parameter)</h4><blockquote>
+<p>改变 turtle 外观，parameter 可以是 [arrow, turtule, circle, square, triangle, classic(默认箭头)] 中的任意一个</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment">#专入库</span></span><br><span class="line">t = turtle.Turtle() <span class="comment">#获取 turtle 对象</span></span><br><span class="line">t.shape(<span class="string">&#x27;turtle&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="画笔"><a href="#画笔" class="headerlink" title="画笔"></a>画笔</h3><h4 id="turtle-pensize-parameter"><a href="#turtle-pensize-parameter" class="headerlink" title="turtle.pensize(parameter)"></a>turtle.pensize(parameter)</h4><blockquote>
+<p>设置画笔大小</p>
+</blockquote>
+<h4 id="turtle-pencolor-parameter"><a href="#turtle-pencolor-parameter" class="headerlink" title="turtle.pencolor(parameter)"></a>turtle.pencolor(parameter)</h4><blockquote>
+<p>设置画笔颜色</p>
+</blockquote>
+<h4 id="turtle-speed-parameter"><a href="#turtle-speed-parameter" class="headerlink" title="turtle.speed(parameter)"></a>turtle.speed(parameter)</h4><blockquote>
+<p>设置画笔速度</p>
+</blockquote>
+<h3 id="综合应用-1"><a href="#综合应用-1" class="headerlink" title="综合应用"></a>综合应用</h3><blockquote>
+<p>用小乌龟画笔在紫色的画布上快速画一个红色粗边框（10），边长为 100px 的矩形</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment"># 导入 turtle 库</span></span><br><span class="line">turtle.screensize(<span class="number">400</span>,<span class="number">300</span>,<span class="string">&#x27;purple&#x27;</span>)</span><br><span class="line">t = turtle.Pen()</span><br><span class="line"><span class="comment"># 设置画笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;turtle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 画矩形</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#面向 3 点钟方向，移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 12 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 12 点钟方向移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 9 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 9 点钟方向移动 100px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 6 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 6 点钟方向移动 100px</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>用三角形画笔在紫色的画布上快速画一个黄色粗边框（10），边长为 100px 的等腰三角形</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment">#导入 turtle 库</span></span><br><span class="line"><span class="comment"># 设置画布</span></span><br><span class="line">turtle.screensize(<span class="number">400</span>,<span class="number">300</span>, <span class="string">&#x27;purple&#x27;</span>)</span><br><span class="line"><span class="comment"># 创建变量</span></span><br><span class="line">t = turtle.Pen()</span><br><span class="line"><span class="comment"># 设置笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;triangle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;yellow&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 绘制三角形</span></span><br><span class="line">t.forward(<span class="number">100</span>)</span><br><span class="line">t.left(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br><span class="line">t.left(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在一张画布上同时画出以上两种图形，两个图形之间间距 100</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment"># 导入 turtle 库</span></span><br><span class="line">turtle.screensize(<span class="number">400</span>,<span class="number">300</span>,<span class="string">&#x27;purple&#x27;</span>)</span><br><span class="line">t = turtle.Pen()</span><br><span class="line"><span class="comment"># 设置画笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;turtle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 画矩形</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#面向 3 点钟方向，移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 12 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 12 点钟方向移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 9 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 9 点钟方向移动 100px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 6 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 6 点钟方向移动 100px</span></span><br><span class="line"></span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;triangle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;yellow&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 绘制三角形</span></span><br><span class="line">t.forward(<span class="number">100</span>)</span><br><span class="line">t.right(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br><span class="line">t.right(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-up"><a href="#turtle-up" class="headerlink" title="turtle.up()"></a>turtle.up()</h4><blockquote>
+<p>提笔</p>
+</blockquote>
+<h4 id="turtle-down"><a href="#turtle-down" class="headerlink" title="turtle.down()"></a>turtle.down()</h4><blockquote>
+<p>落笔</p>
+</blockquote>
+<h4 id="综合应用-2"><a href="#综合应用-2" class="headerlink" title="综合应用"></a>综合应用</h4><blockquote>
+<p>利用提笔、落笔函数，绘制中间没有连线的三角形</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment"># 导入 turtle 库</span></span><br><span class="line">turtle.screensize(<span class="number">400</span>,<span class="number">300</span>,<span class="string">&#x27;purple&#x27;</span>)</span><br><span class="line">t = turtle.Pen()</span><br><span class="line"><span class="comment"># 设置画笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;turtle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 画矩形</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#面向 3 点钟方向，移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 12 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 12 点钟方向移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 9 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 9 点钟方向移动 100px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 6 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 6 点钟方向移动 100px</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动，绘制三角形</span></span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.up()</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br><span class="line">t.down()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;triangle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;yellow&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 绘制三角形</span></span><br><span class="line">t.forward(<span class="number">100</span>)</span><br><span class="line">t.right(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br><span class="line">t.right(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-goto-x-y"><a href="#turtle-goto-x-y" class="headerlink" title="turtle.goto(x,y)"></a>turtle.goto(x,y)</h4><blockquote>
+<p>画笔称动到指定位置</p>
+</blockquote>
+<h4 id="综合应用-3"><a href="#综合应用-3" class="headerlink" title="综合应用"></a>综合应用</h4><blockquote>
+<p>将以上图形改造成为房子</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment"># 导入 turtle 库</span></span><br><span class="line">turtle.screensize(<span class="number">400</span>,<span class="number">300</span>,<span class="string">&#x27;purple&#x27;</span>)</span><br><span class="line">t = turtle.Pen()</span><br><span class="line"><span class="comment"># 设置画笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;turtle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 画矩形</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#面向 3 点钟方向，移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 12 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 12 点钟方向移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 9 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 9 点钟方向移动 100px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 6 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 6 点钟方向移动 100px</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动，绘制三角形</span></span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.up()</span><br><span class="line">t.goto(<span class="number">115</span>,<span class="number">115</span>)</span><br><span class="line">t.down()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;triangle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;yellow&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 绘制三角形</span></span><br><span class="line">t.forward(<span class="number">130</span>)</span><br><span class="line">t.right(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">130</span>)</span><br><span class="line">t.right(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">130</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-setx"><a href="#turtle-setx" class="headerlink" title="turtle.setx()"></a>turtle.setx()</h4><blockquote>
+<p>画笔在移动到 x 轴指定位置</p>
+</blockquote>
+<h4 id="综合应用-4"><a href="#综合应用-4" class="headerlink" title="综合应用"></a>综合应用</h4><blockquote>
+<p>矩形边上画出绿色的小草</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment"># 导入 turtle 库</span></span><br><span class="line">turtle.screensize(<span class="number">400</span>,<span class="number">300</span>,<span class="string">&#x27;purple&#x27;</span>)</span><br><span class="line">t = turtle.Pen()</span><br><span class="line"><span class="comment"># 设置画笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;turtle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># 画矩形</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#面向 3 点钟方向，移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 12 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 12 点钟方向移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 9 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 9 点钟方向移动 100px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 6 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 6 点钟方向移动 100px</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动，绘制三角形</span></span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.up()</span><br><span class="line">t.goto(<span class="number">115</span>,<span class="number">115</span>)</span><br><span class="line">t.down()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 画小草</span></span><br><span class="line">t.up() <span class="comment">#提笔</span></span><br><span class="line">t.setx(<span class="number">120</span>)</span><br><span class="line">t.down() <span class="comment">#落笔</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置画笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;turtle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">6</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;green&#x27;</span>)</span><br><span class="line"></span><br><span class="line">t.left(<span class="number">135</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">70</span>)</span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">70</span>)</span><br><span class="line">t.left(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">80</span>)</span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">80</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-sety"><a href="#turtle-sety" class="headerlink" title="turtle.sety()"></a>turtle.sety()</h4><blockquote>
+<p>画笔在移动到 y 轴指定位置</p>
+</blockquote>
+<h4 id="综合应用-5"><a href="#综合应用-5" class="headerlink" title="综合应用"></a>综合应用</h4><blockquote>
+<p>矩形边上画出绿色的小草</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="comment"># 导入 turtle 库</span></span><br><span class="line">turtle.screensize(<span class="number">400</span>,<span class="number">300</span>,<span class="string">&#x27;purple&#x27;</span>)</span><br><span class="line">t = turtle.Pen()</span><br><span class="line"><span class="comment"># 设置画笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;turtle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 画矩形</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#面向 3 点钟方向，移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 12 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 12 点钟方向移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 9 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 9 点钟方向移动 100px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 6 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 6 点钟方向移动 100px</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动，绘制三角形</span></span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.up()</span><br><span class="line">t.goto(<span class="number">115</span>,<span class="number">115</span>)</span><br><span class="line">t.down()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;triangle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;yellow&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制三角形</span></span><br><span class="line">t.forward(<span class="number">130</span>)</span><br><span class="line">t.right(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">130</span>)</span><br><span class="line">t.right(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">130</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 画小草</span></span><br><span class="line">t.up() <span class="comment">#提笔</span></span><br><span class="line">t.sety(<span class="number">0</span>)</span><br><span class="line">t.down() <span class="comment">#落笔</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置画笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;arrow&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">6</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;green&#x27;</span>)</span><br><span class="line"></span><br><span class="line">t.left(<span class="number">105</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">70</span>)</span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">70</span>)</span><br><span class="line">t.left(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">80</span>)</span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">80</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-fillcolor-colorstring-填充颜色"><a href="#turtle-fillcolor-colorstring-填充颜色" class="headerlink" title="turtle.fillcolor(colorstring) 填充颜色"></a>turtle.fillcolor(colorstring) 填充颜色</h4><h4 id="turtle-color-color-color-同时设置笔与填充色"><a href="#turtle-color-color-color-同时设置笔与填充色" class="headerlink" title="turtle.color(color, color) 同时设置笔与填充色"></a>turtle.color(color, color) 同时设置笔与填充色</h4><blockquote>
+<p>设置绘制图形的填充颜色</p>
+</blockquote>
+<center>绘制黄色小星星</center>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line">turtle.screensize(<span class="literal">None</span>,<span class="literal">None</span>,<span class="string">&#x27;purple&#x27;</span>)</span><br><span class="line">t = turtle.Pen()</span><br><span class="line"><span class="comment"># t.pencoloe(&#x27;yellow&#x27;)</span></span><br><span class="line"><span class="comment"># t.fillcolor(&#x27;yellow&#x27;)</span></span><br><span class="line">t.color(<span class="string">&quot;yellow&quot;</span>, <span class="string">&quot;yellow&quot;</span>)</span><br><span class="line">t.speed(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">t.begin_fill()</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">144</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">144</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">144</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.end_fill()</span><br></pre></td></tr></table></figure>
+
+<h4 id="综合应用-6"><a href="#综合应用-6" class="headerlink" title="综合应用"></a>综合应用</h4><blockquote>
+<p>房子，草地，星星</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">```python</span><br><span class="line"><span class="keyword">import</span> turtle <span class="comment"># 导入 turtle 库</span></span><br><span class="line">turtle.screensize(<span class="number">400</span>,<span class="number">300</span>,<span class="string">&#x27;purple&#x27;</span>)</span><br><span class="line">t = turtle.Pen()</span><br><span class="line"><span class="comment"># 设置画笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;turtle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 画矩形</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#面向 3 点钟方向，移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 12 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 12 点钟方向移动 100 px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 9 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 9 点钟方向移动 100px</span></span><br><span class="line">t.left(<span class="number">90</span>) <span class="comment">#turtle 面向 6 点钟方向</span></span><br><span class="line">t.forward(<span class="number">100</span>) <span class="comment">#turtle 面向 6 点钟方向移动 100px</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动，绘制三角形</span></span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.up()</span><br><span class="line">t.goto(<span class="number">115</span>,<span class="number">115</span>)</span><br><span class="line">t.down()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;triangle&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">10</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;yellow&#x27;</span>)</span><br><span class="line">t.speed(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制三角形</span></span><br><span class="line">t.forward(<span class="number">130</span>)</span><br><span class="line">t.right(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">130</span>)</span><br><span class="line">t.right(<span class="number">120</span>)</span><br><span class="line">t.forward(<span class="number">130</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 画小草</span></span><br><span class="line">t.up() <span class="comment">#提笔</span></span><br><span class="line">t.sety(<span class="number">0</span>)</span><br><span class="line">t.down() <span class="comment">#落笔</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置画笔</span></span><br><span class="line">t.shape(<span class="string">&#x27;arrow&#x27;</span>)</span><br><span class="line">t.pensize(<span class="number">6</span>)</span><br><span class="line">t.pencolor(<span class="string">&#x27;green&#x27;</span>)</span><br><span class="line"></span><br><span class="line">t.left(<span class="number">105</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">70</span>)</span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">70</span>)</span><br><span class="line">t.left(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">80</span>)</span><br><span class="line">t.right(<span class="number">90</span>)</span><br><span class="line">t.forward(<span class="number">80</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 绘制天上的星星</span></span><br><span class="line">t.up()</span><br><span class="line">t.goto(<span class="number">250</span>,<span class="number">280</span>)</span><br><span class="line">t.down()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 设置画笔</span></span><br><span class="line">t.color(<span class="string">&quot;yellow&quot;</span>, <span class="string">&quot;yellow&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">t.begin_fill()</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">144</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">144</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">144</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.end_fill()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 绘制天上的星星</span></span><br><span class="line">t.up()</span><br><span class="line">t.goto(<span class="number">150</span>,<span class="number">240</span>)</span><br><span class="line">t.down()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 设置画笔</span></span><br><span class="line">t.color(<span class="string">&quot;yellow&quot;</span>, <span class="string">&quot;yellow&quot;</span>)</span><br><span class="line">t.pensize(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">t.begin_fill()</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">144</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">144</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.left(<span class="number">144</span>)</span><br><span class="line">t.forward(<span class="number">50</span>)</span><br><span class="line">t.end_fill()</span><br></pre></td></tr></table></figure>
+
+<h4 id="turtle-circle-radius-画圆"><a href="#turtle-circle-radius-画圆" class="headerlink" title="turtle.circle(radius) 画圆"></a>turtle.circle(radius) 画圆</h4><h4 id="turtle-circle-size-steps-3-画三角形"><a href="#turtle-circle-size-steps-3-画三角形" class="headerlink" title="turtle.circle(size,steps=3) 画三角形"></a>turtle.circle(size,steps=3) 画三角形</h4><h4 id="turtle-circle-120-180-画半圆"><a href="#turtle-circle-120-180-画半圆" class="headerlink" title="turtle.circle(120, 180) 画半圆"></a>turtle.circle(120, 180) 画半圆</h4><h4 id="turtle-dot-size-None-color-画圆点"><a href="#turtle-dot-size-None-color-画圆点" class="headerlink" title="turtle.dot(size=None, color) 画圆点"></a>turtle.dot(size=None, color) 画圆点</h4><blockquote>
+<p>按给定的 size 画圆点，size 是直径，None 时，是 pensize+4 和 2*pensize 中取最大的值或 &gt;=1 的整数。color 圆点的颜色</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br><span class="line">t = turtle.Pen()</span><br><span class="line">t.circle(<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">t.up()</span><br><span class="line">t.goto(<span class="number">40</span>, <span class="number">0</span>)</span><br><span class="line">t.down()</span><br><span class="line"><span class="comment">#画三角形</span></span><br><span class="line">t.circle(<span class="number">20</span>,steps=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">t.up()</span><br><span class="line">t.goto(<span class="number">60</span>, <span class="number">0</span>)</span><br><span class="line">t.down()</span><br><span class="line"></span><br><span class="line">t.left(<span class="number">180</span>)</span><br><span class="line">t.circle(<span class="number">20</span>, <span class="number">180</span>)</span><br><span class="line"></span><br><span class="line">t.up()</span><br><span class="line">t.goto(<span class="number">80</span>, <span class="number">0</span>)</span><br><span class="line">t.down()</span><br><span class="line"></span><br><span class="line">t.dot(<span class="number">20</span>, <span class="string">&#x27;black&#x27;</span>)</span><br></pre></td></tr></table></figure>
+    </div>
+</article>
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-%E5%86%85%E7%BD%AE%E5%BA%93-turtle"><span class="toc-number">1.</span> <span class="toc-text">Python 内置库 - turtle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">Python 库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E5%86%85%E7%BD%AE%E5%BA%93%E2%80%94%E2%80%94Turtle"><span class="toc-number">1.2.</span> <span class="toc-text">Python内置库——Turtle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-%E4%B8%AD%E4%BD%BF%E7%94%A8-Turtle-%E5%BA%93"><span class="toc-number">1.2.1.</span> <span class="toc-text">Python 中使用 Turtle 库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-forward-parameter"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">turtle.forward(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-backward-parameter"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">turtle.backward(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-left-parameter"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">turtle.left(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-right-parameter"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">turtle.right(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">综合应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%BB%E5%B8%83"><span class="toc-number">1.2.2.</span> <span class="toc-text">画布</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-%E5%8F%AF%E4%BB%A5%E8%AE%BE%E7%BD%AE%E7%94%BB%E5%B8%83%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%92%8C%E9%A2%9C%E8%89%B2"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">turtle 可以设置画布的大小和颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-%E5%88%9B%E5%BB%BA%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">turtle 创建变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-shape-parameter"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">turtle.shape(parameter)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%BB%E7%AC%94"><span class="toc-number">1.2.3.</span> <span class="toc-text">画笔</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-pensize-parameter"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">turtle.pensize(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-pencolor-parameter"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">turtle.pencolor(parameter)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-speed-parameter"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">turtle.speed(parameter)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-1"><span class="toc-number">1.2.4.</span> <span class="toc-text">综合应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-up"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">turtle.up()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-down"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">turtle.down()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-2"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">综合应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-goto-x-y"><span class="toc-number">1.2.4.4.</span> <span class="toc-text">turtle.goto(x,y)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-3"><span class="toc-number">1.2.4.5.</span> <span class="toc-text">综合应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-setx"><span class="toc-number">1.2.4.6.</span> <span class="toc-text">turtle.setx()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-4"><span class="toc-number">1.2.4.7.</span> <span class="toc-text">综合应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-sety"><span class="toc-number">1.2.4.8.</span> <span class="toc-text">turtle.sety()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-5"><span class="toc-number">1.2.4.9.</span> <span class="toc-text">综合应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-fillcolor-colorstring-%E5%A1%AB%E5%85%85%E9%A2%9C%E8%89%B2"><span class="toc-number">1.2.4.10.</span> <span class="toc-text">turtle.fillcolor(colorstring) 填充颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-color-color-color-%E5%90%8C%E6%97%B6%E8%AE%BE%E7%BD%AE%E7%AC%94%E4%B8%8E%E5%A1%AB%E5%85%85%E8%89%B2"><span class="toc-number">1.2.4.11.</span> <span class="toc-text">turtle.color(color, color) 同时设置笔与填充色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8-6"><span class="toc-number">1.2.4.12.</span> <span class="toc-text">综合应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-circle-radius-%E7%94%BB%E5%9C%86"><span class="toc-number">1.2.4.13.</span> <span class="toc-text">turtle.circle(radius) 画圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-circle-size-steps-3-%E7%94%BB%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="toc-number">1.2.4.14.</span> <span class="toc-text">turtle.circle(size,steps&#x3D;3) 画三角形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-circle-120-180-%E7%94%BB%E5%8D%8A%E5%9C%86"><span class="toc-number">1.2.4.15.</span> <span class="toc-text">turtle.circle(120, 180) 画半圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#turtle-dot-size-None-color-%E7%94%BB%E5%9C%86%E7%82%B9"><span class="toc-number">1.2.4.16.</span> <span class="toc-text">turtle.dot(size&#x3D;None, color) 画圆点</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&text=Python-一级6"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&title=Python-一级6"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&is_video=false&description=Python-一级6"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python-一级6&body=Check out this article: https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&title=Python-一级6"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&title=Python-一级6"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&title=Python-一级6"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&title=Python-一级6"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2023/04/09/Python-%E4%B8%80%E7%BA%A76/&name=Python-一级6&description=&lt;h1 id=&#34;Python-内置库-turtle&#34;&gt;&lt;a href=&#34;#Python-内置库-turtle&#34; class=&#34;headerlink&#34; title=&#34;Python 内置库 - turtle&#34;&gt;&lt;/a&gt;&lt;center&gt;Python 内置库 - turtle&lt;/center&gt;&lt;/h1&gt;&lt;h2 id=&#34;Python-库&#34;&gt;&lt;a href=&#34;#Python-库&#34; class=&#34;headerlink&#34; title=&#34;Python 库&#34;&gt;&lt;/a&gt;Python 库&lt;/h2&gt;&lt;img src=&#34;http://www.plantuml.com/plantuml/svg/XPJBJjj058RtVegHihQoI0HRn0A9QoCLgGl8OXnFi4aoW-o9AWj5OW6fa4g3GE6E82fDgKf3MP6QozFus3m6De6GSSVAMSpY_AFl_7FEp8pP75kyMYahDcSMNY9eaQ8Knjdiw2XQLL0ORuBNtVMwH_xcBxXfWhlxgaOHgfGZZ5B5OX4jzDDHJEOSRZ2QdggkE9nOQ8vneZ5M4ZPvxeNdxi1z0pQtWj_N_hSVqFZUtv6FrT5aTSPPYHX2vXFH43IkdtxMuUjUp_K0CiOio9ZJnC9sUjuWc391y4zSEBo4Fstlttc2vHXVb_7d2RMPDL5cdqNwxGsuxHwzt-raD96XFnRCaidL6O8jccXT1e_McYBC7SxSeBNsFlVKI1PhcSn_yo--615zv33LiIqwQFxrjpfmiHvir_tB5fpk9vzjIOASnNobp7ZPr8HqS7S0nu_3W8O4E5Ujv9nqsB6S4pSAQ_TFdLRGsH_6DQL3S2enP73LXiRjCEHRutjF1-eR_datUfEPJA4mqFNtwikowb64e_DFhYRJ7mGbBq6K4X7r3RXpuSj3s8u4IctmriH-2LLTC4nT9pIlgh6BfDIKCKBryEzv1W00&#34;&gt;
+
+&lt;h2 id=&#34;Python内置库——Turtle&#34;&gt;&lt;a href=&#34;#Python内置库——Turtle&#34; class=&#34;headerlink&#34; title=&#34;Python内置库——Turtle&#34;&gt;&lt;/a&gt;Python内置库——Turtle&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Turtle 库是 Python 语言中一个很流行的图像绘制函数库。小乌龟在坐标系（横轴X，纵轴Y，坐标原点(0,0)）中，根据一组函数指令的控制，在平面坐标系中移动，根据运行轨迹进行绘图。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;turtle 起始位置默认处于坐标原点(0,0)&lt;/li&gt;
+&lt;li&gt;turtle 默认运行方向为 0º 方向（0º 方向为 3 点钟方向）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;Python-中使用-Turtle-库&#34;&gt;&lt;a href=&#34;#Python-中使用-Turtle-库&#34; class=&#34;headerlink&#34; title=&#34;Python 中使用 Turtle 库&#34;&gt;&lt;/a&gt;Python 中使用 Turtle 库&lt;/h3&gt;&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; turtle &lt;span class=&#34;comment&#34;&gt;#导入 turtle 库，注意区分大小写&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;turtle.forward(&lt;span class=&#34;number&#34;&gt;100&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h4 id=&#34;turtle-forward-parameter&#34;&gt;&lt;a href=&#34;#turtle-forward-parameter&#34; class=&#34;headerlink&#34; title=&#34;turtle.forward(parameter)&#34;&gt;&lt;/a&gt;turtle.forward(parameter)&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;turtle 面向 0º 方向移动 100px&lt;/p&gt;
+&lt;/blockquote&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2024
+      Helen Zhang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+          <li><a href="/">
+              Home
+            </a></li>
+          
+          <li><a href="/about/">
+              About
+            </a></li>
+          
+          <li><a href="/archives/">
+              Writing
+            </a></li>
+          
+          <li><a href="/tags/">
+              Tags
+            </a></li>
+          
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">
+              Projects
+            </a></li>
+          
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  <!-- <script src='https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js'></script> -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({ theme: 'default' });
+    }
+  </script>
+  
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

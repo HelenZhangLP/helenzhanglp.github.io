@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="数据类型之间的转换 mindmap  (本课知识点)   数据类型转换    隐式转换    显式转换   eval[&quot;eval()内置函数&quot;]  隐式类型转换 进行数字加法运算时，Boolean 类型变量，隐式转换为数字 1 进行运算。  12b &#x3D; Trueprint(10 + b) #11  显式转换   函数 描述    int(p) 将参数 p 转换为整数类型   float(p) 将参">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-一级4">
+<meta property="og:url" content="https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/index.html">
+<meta property="og:site_name" content="魔女">
+<meta property="og:description" content="数据类型之间的转换 mindmap  (本课知识点)   数据类型转换    隐式转换    显式转换   eval[&quot;eval()内置函数&quot;]  隐式类型转换 进行数字加法运算时，Boolean 类型变量，隐式转换为数字 1 进行运算。  12b &#x3D; Trueprint(10 + b) #11  显式转换   函数 描述    int(p) 将参数 p 转换为整数类型   float(p) 将参">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-07T10:05:59.000Z">
+<meta property="article:modified_time" content="2024-04-09T06:10:11.851Z">
+<meta property="article:author" content="Helen Zhang">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.jpeg">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo.jpeg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Python-一级4</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">魔女</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i
+      class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/">
+              Home
+            </a></li>
+          
+          <li><a href="/about/">
+              About
+            </a></li>
+          
+          <li><a href="/archives/">
+              Writing
+            </a></li>
+          
+          <li><a href="/tags/">
+              Tags
+            </a></li>
+          
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">
+              Projects
+            </a></li>
+          
+      </ul>
+    </span>
+    <br />
+    <span id="actions">
+      <ul>
+        
+          <li><a class="icon" href="/2023/04/08/Python-%E4%B8%80%E7%BA%A75/"><i class="fa fa-chevron-left" aria-hidden="true"
+                onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+          
+            
+              <li><a class="icon" href="/2023/04/03/Python-%E4%B8%80%E7%BA%A73/"><i class="fa fa-chevron-right"
+                    aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a>
+              </li>
+              
+                <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
+                      class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();'
+                      onmouseout='$("#i-top").toggle();'></i></a></li>
+                <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true"
+                      onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();'
+                      onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&text=Python-一级4"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&title=Python-一级4"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&is_video=false&description=Python-一级4"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python-一级4&body=Check out this article: https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&title=Python-一级4"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&title=Python-一级4"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&title=Python-一级4"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&title=Python-一级4"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&name=Python-一级4&description=&lt;h1 id=&#34;数据类型之间的转换&#34;&gt;&lt;a href=&#34;#数据类型之间的转换&#34; class=&#34;headerlink&#34; title=&#34;数据类型之间的转换&#34;&gt;&lt;/a&gt;&lt;center&gt;数据类型之间的转换&lt;/center&gt;&lt;/h1&gt;&lt;pre class=&#34;mermaid&#34;&gt; mindmap
+ (本课知识点)
+  数据类型转换
+   隐式转换
+   显式转换
+  eval[&#34;eval()内置函数&#34;]&lt;/pre&gt;
+
+&lt;h2 id=&#34;隐式类型转换&#34;&gt;&lt;a href=&#34;#隐式类型转换&#34; class=&#34;headerlink&#34; title=&#34;隐式类型转换&#34;&gt;&lt;/a&gt;隐式类型转换&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;进行数字加法运算时，Boolean 类型变量，隐式转换为数字 1 进行运算。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;b = &lt;span class=&#34;literal&#34;&gt;True&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;10&lt;/span&gt; + b) &lt;span class=&#34;comment&#34;&gt;#11&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;显式转换&#34;&gt;&lt;a href=&#34;#显式转换&#34; class=&#34;headerlink&#34; title=&#34;显式转换&#34;&gt;&lt;/a&gt;显式转换&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;函数&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;int(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为整数类型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;float(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为浮点数类型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;str(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为字符串类型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;chr(p)&lt;/td&gt;
+&lt;td&gt;将参数（整数）p 转换为一个字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ord(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为对应的整数值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hex(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为十六进制字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;oct(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为八进制字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bin(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为二进制字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;hr&gt;
+&lt;center&gt;int(parameter)&lt;/center&gt;
+
+&lt;hr&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">数据类型之间的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">隐式类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.</span> <span class="toc-text">显式转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eval-parameter-%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">eval(parameter) 函数的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#print-%E4%B8%AD%E7%9A%84%E5%8D%A0%E4%BD%8D%E7%AC%A6"><span class="toc-number">1.4.</span> <span class="toc-text">print 中的占位符</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="header">
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Python-一级4
+    </h1>
+
+
+
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">
+            魔女
+                    
+          </span>
+        </span>
+        
+    <div class="postdate">
+        <time datetime="2023-04-07T10:05:59.000Z" itemprop="datePublished">2023-04-07</time>
+    </div>
+
+
+          
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+      </div>
+  </header>
+  
+
+    <div class="content" itemprop="articleBody">
+      <h1 id="数据类型之间的转换"><a href="#数据类型之间的转换" class="headerlink" title="数据类型之间的转换"></a><center>数据类型之间的转换</center></h1><pre class="mermaid"> mindmap
+ (本课知识点)
+  数据类型转换
+   隐式转换
+   显式转换
+  eval["eval()内置函数"]</pre>
+
+<h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><blockquote>
+<p>进行数字加法运算时，Boolean 类型变量，隐式转换为数字 1 进行运算。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">10</span> + b) <span class="comment">#11</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="显式转换"><a href="#显式转换" class="headerlink" title="显式转换"></a>显式转换</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int(p)</td>
+<td>将参数 p 转换为整数类型</td>
+</tr>
+<tr>
+<td>float(p)</td>
+<td>将参数 p 转换为浮点数类型</td>
+</tr>
+<tr>
+<td>str(p)</td>
+<td>将参数 p 转换为字符串类型</td>
+</tr>
+<tr>
+<td>chr(p)</td>
+<td>将参数（整数）p 转换为一个字符</td>
+</tr>
+<tr>
+<td>ord(p)</td>
+<td>将参数 p 转换为对应的整数值</td>
+</tr>
+<tr>
+<td>hex(p)</td>
+<td>将参数 p 转换为十六进制字符串</td>
+</tr>
+<tr>
+<td>oct(p)</td>
+<td>将参数 p 转换为八进制字符串</td>
+</tr>
+<tr>
+<td>bin(p)</td>
+<td>将参数 p 转换为二进制字符串</td>
+</tr>
+</tbody></table>
+<hr>
+<center>int(parameter)</center>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># float 类型转 int 类型</span></span><br><span class="line"><span class="comment"># int(parameter)</span></span><br><span class="line">pi = <span class="number">3.1415926</span></span><br><span class="line">temperature = -<span class="number">93.2</span> <span class="comment">#南极最低气温</span></span><br><span class="line">price = <span class="number">99.9</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;float 类型转 int 类型：&#x27;</span>, <span class="built_in">int</span>(pi)) <span class="comment">#3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;float 类型转 int 类型：&#x27;</span>, <span class="built_in">int</span>(temperature)) <span class="comment">#-93</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;float 类型转 int 类型：&#x27;</span>, <span class="built_in">int</span>(price)) <span class="comment">#99</span></span><br><span class="line">string_int = <span class="string">&#x27;99&#x27;</span></span><br><span class="line">string_float = <span class="string">&#x27;9.9&#x27;</span></span><br><span class="line">string_num = <span class="string">&#x27;1E2&#x27;</span></span><br><span class="line">string_bit = <span class="string">&#x27;1000&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;str 类型转 int 类型：&#x27;</span>, <span class="built_in">int</span>(string_int)) <span class="comment">#str 类型转 int 类型： 99</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;二进制字符串转换为十进制：&#x27;</span>, <span class="built_in">int</span>(string_bit, <span class="number">2</span>)) <span class="comment">#二进制字符串转换为十进制：8</span></span><br><span class="line"><span class="comment">#print(&#x27;str 类型转 int 类型：&#x27;, int(string_float)) #ValueError: invalid literal for int() with base 10: &#x27;9.9&#x27;</span></span><br><span class="line"><span class="comment">#print(&#x27;str 类型转 int 类型：&#x27;, int(string_num)) #ValueError: invalid literal for int() with base 10: &#x27;1E2&#x27;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<center>float(parameter)</center>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># int 转 float 类型</span></span><br><span class="line"><span class="comment"># float(parameter)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;int 类型转换为 float 类型：&#x27;</span>, <span class="built_in">float</span>(<span class="number">20</span>), <span class="built_in">type</span>(<span class="built_in">float</span>(<span class="number">20</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;str 类型转换为 float 类型：&#x27;</span>, <span class="built_in">float</span>(<span class="string">&#x27;20&#x27;</span>), <span class="built_in">type</span>(<span class="built_in">float</span>(<span class="string">&#x27;20&#x27;</span>))) <span class="comment">#20.0</span></span><br></pre></td></tr></table></figure>
+<hr>
+<center>str(parameter)</center>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># str(parameter)</span></span><br><span class="line"><span class="comment"># int 转 str</span></span><br><span class="line">int_str = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;int 类型转 str 类型：&#x27;</span>, <span class="built_in">str</span>(int_str), <span class="built_in">type</span>(<span class="built_in">str</span>(int_str))) <span class="comment">#10 int 类型转 str 类型： &lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="comment"># float 转 str</span></span><br><span class="line">float_str = <span class="string">&#x27;3.1415926&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;float 类型转 str 类型：&#x27;</span>, <span class="built_in">str</span>(float_str), <span class="built_in">type</span>(<span class="built_in">str</span>(float_str))) <span class="comment">#3.1415926 float 类型转 str 类型： &lt;class &#x27;str&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<center>+ 的使用</center>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;100&#x27;</span> + <span class="string">&#x27;200&#x27;</span>) <span class="comment">#100200</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="string">&#x27;100&#x27;</span>)+<span class="built_in">int</span>(<span class="string">&#x27;200&#x27;</span>)) <span class="comment">#300</span></span><br></pre></td></tr></table></figure>
+<hr>
+<center>chr(parameter)</center>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># unicode码 33 转换为相应的字符 !</span></span><br><span class="line">int_ascII_str = <span class="number">33</span></span><br><span class="line"><span class="built_in">chr</span>(int_ascII_str) <span class="comment">#!</span></span><br></pre></td></tr></table></figure>
+<hr>
+<center>进制转换</center>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 十进制转换为二进制</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;33 转换为二进制：&#x27;</span>, <span class="built_in">bin</span>(<span class="number">33</span>)) <span class="comment">#33 转换为二进制： 0b100001</span></span><br><span class="line"><span class="comment"># 十进制转换为八进制</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;33 转换为八进制：&#x27;</span>, <span class="built_in">oct</span>(<span class="number">33</span>)) <span class="comment">#33 转换为八进制： 0o41</span></span><br><span class="line"><span class="comment"># 十进制转换为十六进制</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;33 转换为十六进制：&#x27;</span>, <span class="built_in">hex</span>(<span class="number">33</span>)) <span class="comment">#33 转换为十六进制： 0x21</span></span><br></pre></td></tr></table></figure>
+<p><span class='custom-box custom-box-933'>思考：</span></p>
+<ul>
+<li>与 0xf2 值相等的是(342,242,0b11010010,0o362)</li>
+</ul>
+<p>算法：$ 2 * 16^0 + 15*16^1 = 2 + 240 = 242$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>(<span class="string">&#x27;0xf2&#x27;</span>,<span class="number">16</span>) <span class="comment">#242</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="eval-parameter-函数的使用"><a href="#eval-parameter-函数的使用" class="headerlink" title="eval(parameter) 函数的使用"></a>eval(parameter) 函数的使用</h2><p>Python 内置函数，<span class='custom-box custom-box-393'>用于去掉字符串最外侧的引号，并按照 Python 语句方式执行去掉引号后的语句</span></p>
+<blockquote>
+<p>语法格式：<code>variable=eval(string)</code></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算下列字符串等式</span></span><br><span class="line">str_equation = <span class="string">&#x27;1.1 * 3&#x27;</span></span><br><span class="line"><span class="comment"># 使用 eval() 内置函数，去掉引号，并执行去掉引号后的语句</span></span><br><span class="line">equation = <span class="built_in">eval</span>(str_equation)</span><br><span class="line"><span class="built_in">print</span>(equation, <span class="built_in">type</span>(equation)) <span class="comment">#3.3000000000000003 &lt;class &#x27;float&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+<p><span class='custom-box custom-box-933'>eval() 函数经常与 input() 函数一起使用</span></p>
+<hr>
+<center>N 个路灯间</center>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">input_distance = <span class="built_in">input</span>(<span class="string">&#x27;请输入两个路灯之间的距离（单位：m）：&#x27;</span>) <span class="comment">#用户输入可能是小数</span></span><br><span class="line">input_num=<span class="built_in">input</span>(<span class="string">&#x27;请输入路灯的数量：&#x27;</span>) <span class="comment">#用户输入一定是整数</span></span><br><span class="line">total_distance=<span class="built_in">eval</span>(input_distance)*(<span class="built_in">eval</span>(input_num)-<span class="number">1</span>)</span><br><span class="line"><span class="comment">#print(input_num+&#x27;个路灯之间的距离是：&#x27;, input_distance * (input_num - 1)) #TypeError: unsupported operand type(s) for -: &#x27;str&#x27; and &#x27;int&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(input_num), <span class="built_in">type</span>(input_distance)) <span class="comment">#&lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(input_num+<span class="string">&#x27;个路灯之间的距离是：&#x27;</span>, total_distance , <span class="string">&#x27;m&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;%s个路灯之间的距离是%d米&#x27;</span>%(input_num, total_distance))</span><br></pre></td></tr></table></figure>
+
+<h2 id="print-中的占位符"><a href="#print-中的占位符" class="headerlink" title="print 中的占位符"></a>print 中的占位符</h2><blockquote>
+<p>%s 字符串占位符<br>%d 数字占位符</p>
+</blockquote>
+<p>改造以上案例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;%s个路灯之间的距离是%d米&#x27;</span>%(input_num, total_distance))</span><br></pre></td></tr></table></figure>
+    </div>
+</article>
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">数据类型之间的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">隐式类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.</span> <span class="toc-text">显式转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eval-parameter-%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">eval(parameter) 函数的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#print-%E4%B8%AD%E7%9A%84%E5%8D%A0%E4%BD%8D%E7%AC%A6"><span class="toc-number">1.4.</span> <span class="toc-text">print 中的占位符</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&text=Python-一级4"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&title=Python-一级4"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&is_video=false&description=Python-一级4"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python-一级4&body=Check out this article: https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&title=Python-一级4"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&title=Python-一级4"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&title=Python-一级4"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&title=Python-一级4"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2023/04/07/Python-%E4%B8%80%E7%BA%A74/&name=Python-一级4&description=&lt;h1 id=&#34;数据类型之间的转换&#34;&gt;&lt;a href=&#34;#数据类型之间的转换&#34; class=&#34;headerlink&#34; title=&#34;数据类型之间的转换&#34;&gt;&lt;/a&gt;&lt;center&gt;数据类型之间的转换&lt;/center&gt;&lt;/h1&gt;&lt;pre class=&#34;mermaid&#34;&gt; mindmap
+ (本课知识点)
+  数据类型转换
+   隐式转换
+   显式转换
+  eval[&#34;eval()内置函数&#34;]&lt;/pre&gt;
+
+&lt;h2 id=&#34;隐式类型转换&#34;&gt;&lt;a href=&#34;#隐式类型转换&#34; class=&#34;headerlink&#34; title=&#34;隐式类型转换&#34;&gt;&lt;/a&gt;隐式类型转换&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;进行数字加法运算时，Boolean 类型变量，隐式转换为数字 1 进行运算。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;b = &lt;span class=&#34;literal&#34;&gt;True&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;10&lt;/span&gt; + b) &lt;span class=&#34;comment&#34;&gt;#11&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;显式转换&#34;&gt;&lt;a href=&#34;#显式转换&#34; class=&#34;headerlink&#34; title=&#34;显式转换&#34;&gt;&lt;/a&gt;显式转换&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;函数&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;int(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为整数类型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;float(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为浮点数类型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;str(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为字符串类型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;chr(p)&lt;/td&gt;
+&lt;td&gt;将参数（整数）p 转换为一个字符&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ord(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为对应的整数值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hex(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为十六进制字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;oct(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为八进制字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bin(p)&lt;/td&gt;
+&lt;td&gt;将参数 p 转换为二进制字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;hr&gt;
+&lt;center&gt;int(parameter)&lt;/center&gt;
+
+&lt;hr&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2024
+      Helen Zhang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+          <li><a href="/">
+              Home
+            </a></li>
+          
+          <li><a href="/about/">
+              About
+            </a></li>
+          
+          <li><a href="/archives/">
+              Writing
+            </a></li>
+          
+          <li><a href="/tags/">
+              Tags
+            </a></li>
+          
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">
+              Projects
+            </a></li>
+          
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  <!-- <script src='https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js'></script> -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({ theme: 'default' });
+    }
+  </script>
+  
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

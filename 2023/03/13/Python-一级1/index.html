@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="入门 【电子学会一级考试内容】： 1. 理解“输入、处理、输出”程序编写方法； 2. 掌握Python的基本格式，编写程序时会合理的使用缩进、注释；    程序设计语言又被称为编程语言 计算机程序是使用编程语言组织起来的一级计算机指令 计算机指令是指挥机器工作的指示和命令。 编程语言分为机器语言、汇编语言、和高级语言。 采用编译方式执行的语言称为静态语言。 采用解释方式执行的语言称为脚本语言。 I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-一级1">
+<meta property="og:url" content="https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/index.html">
+<meta property="og:site_name" content="魔女">
+<meta property="og:description" content="入门 【电子学会一级考试内容】： 1. 理解“输入、处理、输出”程序编写方法； 2. 掌握Python的基本格式，编写程序时会合理的使用缩进、注释；    程序设计语言又被称为编程语言 计算机程序是使用编程语言组织起来的一级计算机指令 计算机指令是指挥机器工作的指示和命令。 编程语言分为机器语言、汇编语言、和高级语言。 采用编译方式执行的语言称为静态语言。 采用解释方式执行的语言称为脚本语言。 I">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-13T05:05:46.000Z">
+<meta property="article:modified_time" content="2024-04-09T06:20:45.841Z">
+<meta property="article:author" content="Helen Zhang">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.jpeg">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo.jpeg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Python-一级1</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">魔女</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i
+      class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/">
+              Home
+            </a></li>
+          
+          <li><a href="/about/">
+              About
+            </a></li>
+          
+          <li><a href="/archives/">
+              Writing
+            </a></li>
+          
+          <li><a href="/tags/">
+              Tags
+            </a></li>
+          
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">
+              Projects
+            </a></li>
+          
+      </ul>
+    </span>
+    <br />
+    <span id="actions">
+      <ul>
+        
+          <li><a class="icon" href="/2023/03/14/Python-%E4%B8%80%E7%BA%A72/"><i class="fa fa-chevron-left" aria-hidden="true"
+                onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+          
+            
+              <li><a class="icon" href="/2023/03/13/Python-%E9%A2%84%E5%A4%87/"><i class="fa fa-chevron-right"
+                    aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a>
+              </li>
+              
+                <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
+                      class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();'
+                      onmouseout='$("#i-top").toggle();'></i></a></li>
+                <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true"
+                      onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();'
+                      onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&text=Python-一级1"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&title=Python-一级1"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&is_video=false&description=Python-一级1"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python-一级1&body=Check out this article: https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&title=Python-一级1"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&title=Python-一级1"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&title=Python-一级1"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&title=Python-一级1"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&name=Python-一级1&description=&lt;h1 id=&#34;入门&#34;&gt;&lt;a href=&#34;#入门&#34; class=&#34;headerlink&#34; title=&#34;入门&#34;&gt;&lt;/a&gt;&lt;center&gt;入门&lt;/center&gt;&lt;/h1&gt;&lt;span class=&#34;custom-box custom-box-939&#34;&gt;
+【电子学会一级考试内容】：
+1. 理解“输入、处理、输出”程序编写方法；
+2. 掌握Python的基本格式，编写程序时会合理的使用缩进、注释；
+&lt;/span&gt;
+
+&lt;ul&gt;
+&lt;li&gt;程序设计语言又被称为编程语言&lt;/li&gt;
+&lt;li&gt;计算机程序是&lt;strong&gt;使用编程语言组织起来的一级计算机&lt;/strong&gt;&lt;span class=&#34;custom-box custom-box-933&#34;&gt;指令&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;计算机指令是指挥机器工作的指示和命令。&lt;/li&gt;
+&lt;li&gt;编程语言分为机器语言、汇编语言、和高级语言。&lt;/li&gt;
+&lt;li&gt;采用编译方式执行的语言称为静态语言。&lt;/li&gt;
+&lt;li&gt;采用解释方式执行的语言称为脚本语言。&lt;/li&gt;
+&lt;li&gt;IPO 指的是输入、处理和输出。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Python 是交互式语言，即在 Python 提示符中直接互动执行编写程序。&lt;/p&gt;
+&lt;h2 id=&#34;IPO-编程方式&#34;&gt;&lt;a href=&#34;#IPO-编程方式&#34; class=&#34;headerlink&#34; title=&#34;IPO 编程方式&#34;&gt;&lt;/a&gt;IPO 编程方式&lt;/h2&gt;&lt;h3 id=&#34;输出函数-Print&#34;&gt;&lt;a href=&#34;#输出函数-Print&#34; class=&#34;headerlink&#34; title=&#34;输出函数 Print&#34;&gt;&lt;/a&gt;输出函数 Print&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;print(value,…,sep=’’,end=’\n’,file=None)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;mermaid&#34;&gt; mindmap
+ root(print&lt;br&gt;内置函数用法)
+    )输出到控制台(
+        ))换行输出((
+            pStr[&#34;print(&#39;print 是内置函数&#39;)&lt;br&gt;打印字符串&#34;]
+                quotationMark1[&#34;单引号 print(&#39;single quotation mark&#39;)&#34;]
+                quotationMark2[&#34;双引号 print(&amp;ldquo;double quotation mark&amp;rdquo;)&#34;]
+                quotationMark3[&#34;三引号 print(&#39;&#39;&#39;triple quotation marks&#39;&#39;&#39;)&#34;]
+                quotationMark4[&#34;三引号 print(&amp;ldquo;&amp;ldquo;&amp;ldquo;triple quotation marks&amp;rdquo;&amp;rdquo;&amp;rdquo;)&#34;]
+            pNum[&#34;print(90)&lt;br&gt;打印数字&#34;]
+            pVariable[&#34;print(variable)&lt;br&gt;打印变量&#34;]
+            pExpression[&#34;print(a + b)&lt;br&gt;打印表达式&#34;]
+            pChr[&#34;print(chr(98))&lt;br&gt;输出数字 ASCII 表中的字符&#34;]
+            pOrd[&#34;print(ord(&#39;北京&#39;))&lt;br&gt;输出中文的 Unicode 编码&#34;]
+        ))同行输出((
+            pline[&#34;print(&#39;hello,&#39;,&#39;Python&#39;)&#34;]
+            [&#34;print(&#39;hello,&#39;,&#39;Python&#39;,end=&#39;;&#39;)&lt;br&gt;同行输出，以；结尾&#34;]
+            [&#34;print(&#39;hello&#39;+&#39;Python&#39;)&lt;br&gt;连接符实现同行输出&lt;br&gt;注意只能连接字符串&#34;]
+    )输出到文件(
+        pFile[&#34;fp=open(&#39;f.txt&#39;,&#39;w&#39;)&lt;br&gt;print(&#39;baby coding&#39;, file=fp)&lt;br&gt;fp.close()&#34;]&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;center&gt;202312考题&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;编号&lt;/th&gt;
+&lt;th&gt;题目&lt;/th&gt;
+&lt;th&gt;解析&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;print(&amp;#39;hello&amp;#39;);print(&amp;#39;world&amp;#39;)&lt;/code&gt;运行结果是（）&lt;/td&gt;
+&lt;td&gt;本题考察的 Python 编程基础，print 在打印时，会在打印的末尾默认加上换行符，所以打印出来的内容是两行。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;在Python中，语句 print(a,b) 的功能是？（　）&lt;/td&gt;
+&lt;td&gt;在Python中，print(a,b) 是用于将变量 a 和 b 的值输出到标准输出设备（通常是控制台）的函数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;在Python程序中，双引号和三引号都是引号，没有用法区别，可以随意替换。（　）&lt;/td&gt;
+&lt;td&gt;三引号可以跨行使用，双引号不能。故错误&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;td&gt;print(‘Hello, World!”)代码段会引发报错&lt;/td&gt;
+&lt;td&gt;码中的字符串使用了不匹配的引号，导致语法错误。要么使用双引号表示字符串，要么使用单引号表示字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IPO-%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">IPO 编程方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%87%BD%E6%95%B0-Print"><span class="toc-number">1.1.1.</span> <span class="toc-text">输出函数 Print</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0-Input"><span class="toc-number">1.1.2.</span> <span class="toc-text">输入函数 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">1.1.3.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B"><span class="toc-number">1.1.4.</span> <span class="toc-text">代码缩进</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="header">
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Python-一级1
+    </h1>
+
+
+
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">
+            魔女
+                    
+          </span>
+        </span>
+        
+    <div class="postdate">
+        <time datetime="2023-03-13T05:05:46.000Z" itemprop="datePublished">2023-03-13</time>
+    </div>
+
+
+          
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+      </div>
+  </header>
+  
+
+    <div class="content" itemprop="articleBody">
+      <h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a><center>入门</center></h1><span class='custom-box custom-box-939'>
+【电子学会一级考试内容】：
+1. 理解“输入、处理、输出”程序编写方法；
+2. 掌握Python的基本格式，编写程序时会合理的使用缩进、注释；
+</span>
+
+<ul>
+<li>程序设计语言又被称为编程语言</li>
+<li>计算机程序是<strong>使用编程语言组织起来的一级计算机</strong><span class='custom-box custom-box-933'>指令</span></li>
+<li>计算机指令是指挥机器工作的指示和命令。</li>
+<li>编程语言分为机器语言、汇编语言、和高级语言。</li>
+<li>采用编译方式执行的语言称为静态语言。</li>
+<li>采用解释方式执行的语言称为脚本语言。</li>
+<li>IPO 指的是输入、处理和输出。</li>
+</ul>
+<p>Python 是交互式语言，即在 Python 提示符中直接互动执行编写程序。</p>
+<h2 id="IPO-编程方式"><a href="#IPO-编程方式" class="headerlink" title="IPO 编程方式"></a>IPO 编程方式</h2><h3 id="输出函数-Print"><a href="#输出函数-Print" class="headerlink" title="输出函数 Print"></a>输出函数 Print</h3><blockquote>
+<p>print(value,…,sep=’’,end=’\n’,file=None)</p>
+</blockquote>
+<pre class="mermaid"> mindmap
+ root(print<br/>内置函数用法)
+    )输出到控制台(
+        ))换行输出((
+            pStr["print('print 是内置函数')<br/>打印字符串"]
+                quotationMark1["单引号 print('single quotation mark')"]
+                quotationMark2["双引号 print(&ldquo;double quotation mark&rdquo;)"]
+                quotationMark3["三引号 print('''triple quotation marks''')"]
+                quotationMark4["三引号 print(&ldquo;&ldquo;&ldquo;triple quotation marks&rdquo;&rdquo;&rdquo;)"]
+            pNum["print(90)<br/>打印数字"]
+            pVariable["print(variable)<br/>打印变量"]
+            pExpression["print(a + b)<br/>打印表达式"]
+            pChr["print(chr(98))<br/>输出数字 ASCII 表中的字符"]
+            pOrd["print(ord('北京'))<br/>输出中文的 Unicode 编码"]
+        ))同行输出((
+            pline["print('hello,','Python')"]
+            ["print('hello,','Python',end=';')<br/>同行输出，以；结尾"]
+            ["print('hello'+'Python')<br/>连接符实现同行输出<br/>注意只能连接字符串"]
+    )输出到文件(
+        pFile["fp=open('f.txt','w')<br/>print('baby coding', file=fp)<br/>fp.close()"]</pre>
+
+<p><strong><center>202312考题</center></strong></p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>题目</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>print(&#39;hello&#39;);print(&#39;world&#39;)</code>运行结果是（）</td>
+<td>本题考察的 Python 编程基础，print 在打印时，会在打印的末尾默认加上换行符，所以打印出来的内容是两行。</td>
+</tr>
+<tr>
+<td>14</td>
+<td>在Python中，语句 print(a,b) 的功能是？（　）</td>
+<td>在Python中，print(a,b) 是用于将变量 a 和 b 的值输出到标准输出设备（通常是控制台）的函数。</td>
+</tr>
+<tr>
+<td>34</td>
+<td>在Python程序中，双引号和三引号都是引号，没有用法区别，可以随意替换。（　）</td>
+<td>三引号可以跨行使用，双引号不能。故错误</td>
+</tr>
+<tr>
+<td>35</td>
+<td>print(‘Hello, World!”)代码段会引发报错</td>
+<td>码中的字符串使用了不匹配的引号，导致语法错误。要么使用双引号表示字符串，要么使用单引号表示字符串</td>
+</tr>
+</tbody></table>
+<p><span class='custom-box custom-box-933'>思考：</span></p>
+<ul>
+<li>print(‘\nPython’) 输出结果是什么</li>
+</ul>
+<h3 id="输入函数-Input"><a href="#输入函数-Input" class="headerlink" title="输入函数 Input"></a>输入函数 Input</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>variable = <span class="built_in">input</span>(<span class="string">&#x27;提示文字&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre class="mermaid"> mindmap
+ ("***代码：*** variable = input('提示文字')")
+    ["variable 变量名"]
+    ["input() 函数，内置函数"]
+    ["‘提示文字’ 函数 input 的参数"]</pre>
+<p><span class='custom-box custom-box-933'>注意：运行 input 函数，无论输入什么内容，variable 接收的内容都是 <strong>字符串</strong> 类型</span><br><strong><center>202312考题</center></strong></p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>题目</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>31</td>
+<td>执行下列语句，输入”学校”，程序最终输出的text结果是”小明同学在学校” 。（ ）<code>text = input(&quot;小明同学在&quot;);print(text)</code></td>
+<td>使用input()函数获取输入时，只保存输入的内容，不保存提示语中的内容，故输出变量text时，结果为”学校”</td>
+</tr>
+</tbody></table>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>程序员在代码中添加的对代码的功能解释说明的标注性文字<br>目的在于：提高代码的可读性<br>注释的内容将被 Python 解释器忽略，不被计算机执行<br>注释分为：单行注释、多行注释、中文声明注释</p>
+<p><font color='red'>注意：#与注释内容之间不能添加空格</font></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="comment">#中文文档声明注释要写在文件第一行</span></span><br><span class="line"><span class="comment">#单行注释</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">第一行注释</span></span><br><span class="line"><span class="string">第二行注释</span></span><br><span class="line"><span class="string">第三行注释</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="代码缩进"><a href="#代码缩进" class="headerlink" title="代码缩进"></a>代码缩进</h3><blockquote>
+<p>每行语句开始前的空白区域，是用来表示 Python 程序间的包含和层级关系，通常四个空格作为一个缩进量<br>类定义、函数定义、流程控制语句以及异常处理语句等行尾的冒号和下一行的缩进表示一个代码块的开始，而缩进结束，则表示一个代码块的结束。</p>
+</blockquote>
+<p><span class='custom-box custom-box-393'>思考：</span></p>
+<ul>
+<li>Python 是一种（解释）类型的编程语言</li>
+<li>Python 语句 print(“中国，你好”)的输出是(中国，你好)</li>
+<li>IPO 模式指的是 input,process,output</li>
+<li>Python 语言是通过（缩进）来体现语句间的逻辑关系</li>
+</ul>
+<p><span class='custom-box custom-box-933'>作业：</span></p>
+<ul>
+<li>将 ”我是最棒的“ 输出到 <code>python1.txt</code> 文件</li>
+<li>输入姓名、年龄、梦想，并输出到控制台；效果如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">请输入您的姓名：moses</span><br><span class="line">请输入您的年龄：34</span><br><span class="line">请输入您的梦想：to be a teacher</span><br><span class="line">---自我介绍---</span><br><span class="line">姓名： moses</span><br><span class="line">年龄 34</span><br><span class="line">梦想 to be a teacher</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+</article>
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IPO-%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">IPO 编程方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%87%BD%E6%95%B0-Print"><span class="toc-number">1.1.1.</span> <span class="toc-text">输出函数 Print</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0-Input"><span class="toc-number">1.1.2.</span> <span class="toc-text">输入函数 Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">1.1.3.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BC%A9%E8%BF%9B"><span class="toc-number">1.1.4.</span> <span class="toc-text">代码缩进</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&text=Python-一级1"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&title=Python-一级1"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&is_video=false&description=Python-一级1"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python-一级1&body=Check out this article: https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&title=Python-一级1"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&title=Python-一级1"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&title=Python-一级1"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&title=Python-一级1"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2023/03/13/Python-%E4%B8%80%E7%BA%A71/&name=Python-一级1&description=&lt;h1 id=&#34;入门&#34;&gt;&lt;a href=&#34;#入门&#34; class=&#34;headerlink&#34; title=&#34;入门&#34;&gt;&lt;/a&gt;&lt;center&gt;入门&lt;/center&gt;&lt;/h1&gt;&lt;span class=&#34;custom-box custom-box-939&#34;&gt;
+【电子学会一级考试内容】：
+1. 理解“输入、处理、输出”程序编写方法；
+2. 掌握Python的基本格式，编写程序时会合理的使用缩进、注释；
+&lt;/span&gt;
+
+&lt;ul&gt;
+&lt;li&gt;程序设计语言又被称为编程语言&lt;/li&gt;
+&lt;li&gt;计算机程序是&lt;strong&gt;使用编程语言组织起来的一级计算机&lt;/strong&gt;&lt;span class=&#34;custom-box custom-box-933&#34;&gt;指令&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;计算机指令是指挥机器工作的指示和命令。&lt;/li&gt;
+&lt;li&gt;编程语言分为机器语言、汇编语言、和高级语言。&lt;/li&gt;
+&lt;li&gt;采用编译方式执行的语言称为静态语言。&lt;/li&gt;
+&lt;li&gt;采用解释方式执行的语言称为脚本语言。&lt;/li&gt;
+&lt;li&gt;IPO 指的是输入、处理和输出。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Python 是交互式语言，即在 Python 提示符中直接互动执行编写程序。&lt;/p&gt;
+&lt;h2 id=&#34;IPO-编程方式&#34;&gt;&lt;a href=&#34;#IPO-编程方式&#34; class=&#34;headerlink&#34; title=&#34;IPO 编程方式&#34;&gt;&lt;/a&gt;IPO 编程方式&lt;/h2&gt;&lt;h3 id=&#34;输出函数-Print&#34;&gt;&lt;a href=&#34;#输出函数-Print&#34; class=&#34;headerlink&#34; title=&#34;输出函数 Print&#34;&gt;&lt;/a&gt;输出函数 Print&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;print(value,…,sep=’’,end=’\n’,file=None)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;mermaid&#34;&gt; mindmap
+ root(print&lt;br&gt;内置函数用法)
+    )输出到控制台(
+        ))换行输出((
+            pStr[&#34;print(&#39;print 是内置函数&#39;)&lt;br&gt;打印字符串&#34;]
+                quotationMark1[&#34;单引号 print(&#39;single quotation mark&#39;)&#34;]
+                quotationMark2[&#34;双引号 print(&amp;ldquo;double quotation mark&amp;rdquo;)&#34;]
+                quotationMark3[&#34;三引号 print(&#39;&#39;&#39;triple quotation marks&#39;&#39;&#39;)&#34;]
+                quotationMark4[&#34;三引号 print(&amp;ldquo;&amp;ldquo;&amp;ldquo;triple quotation marks&amp;rdquo;&amp;rdquo;&amp;rdquo;)&#34;]
+            pNum[&#34;print(90)&lt;br&gt;打印数字&#34;]
+            pVariable[&#34;print(variable)&lt;br&gt;打印变量&#34;]
+            pExpression[&#34;print(a + b)&lt;br&gt;打印表达式&#34;]
+            pChr[&#34;print(chr(98))&lt;br&gt;输出数字 ASCII 表中的字符&#34;]
+            pOrd[&#34;print(ord(&#39;北京&#39;))&lt;br&gt;输出中文的 Unicode 编码&#34;]
+        ))同行输出((
+            pline[&#34;print(&#39;hello,&#39;,&#39;Python&#39;)&#34;]
+            [&#34;print(&#39;hello,&#39;,&#39;Python&#39;,end=&#39;;&#39;)&lt;br&gt;同行输出，以；结尾&#34;]
+            [&#34;print(&#39;hello&#39;+&#39;Python&#39;)&lt;br&gt;连接符实现同行输出&lt;br&gt;注意只能连接字符串&#34;]
+    )输出到文件(
+        pFile[&#34;fp=open(&#39;f.txt&#39;,&#39;w&#39;)&lt;br&gt;print(&#39;baby coding&#39;, file=fp)&lt;br&gt;fp.close()&#34;]&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;center&gt;202312考题&lt;/center&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;编号&lt;/th&gt;
+&lt;th&gt;题目&lt;/th&gt;
+&lt;th&gt;解析&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;print(&amp;#39;hello&amp;#39;);print(&amp;#39;world&amp;#39;)&lt;/code&gt;运行结果是（）&lt;/td&gt;
+&lt;td&gt;本题考察的 Python 编程基础，print 在打印时，会在打印的末尾默认加上换行符，所以打印出来的内容是两行。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;td&gt;在Python中，语句 print(a,b) 的功能是？（　）&lt;/td&gt;
+&lt;td&gt;在Python中，print(a,b) 是用于将变量 a 和 b 的值输出到标准输出设备（通常是控制台）的函数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;在Python程序中，双引号和三引号都是引号，没有用法区别，可以随意替换。（　）&lt;/td&gt;
+&lt;td&gt;三引号可以跨行使用，双引号不能。故错误&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;td&gt;print(‘Hello, World!”)代码段会引发报错&lt;/td&gt;
+&lt;td&gt;码中的字符串使用了不匹配的引号，导致语法错误。要么使用双引号表示字符串，要么使用单引号表示字符串&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2024
+      Helen Zhang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+          <li><a href="/">
+              Home
+            </a></li>
+          
+          <li><a href="/about/">
+              About
+            </a></li>
+          
+          <li><a href="/archives/">
+              Writing
+            </a></li>
+          
+          <li><a href="/tags/">
+              Tags
+            </a></li>
+          
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">
+              Projects
+            </a></li>
+          
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  <!-- <script src='https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js'></script> -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({ theme: 'default' });
+    }
+  </script>
+  
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

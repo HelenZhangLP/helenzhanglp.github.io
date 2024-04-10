@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Python 中基本数据类型 mindmap  (本课知识点)   [Python 中基本数据类型]     ))数值类型((       )① **整数类型**(       )浮点数类型(     ))字符串类型((     ))布尔类型((   [Python 中数据类型之间的转换]   [&quot;eval() 函数的使用&quot;]   [了解不同的进制数]   [掌握 Python 中常用的运算符及优">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-一级3">
+<meta property="og:url" content="https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/index.html">
+<meta property="og:site_name" content="魔女">
+<meta property="og:description" content="Python 中基本数据类型 mindmap  (本课知识点)   [Python 中基本数据类型]     ))数值类型((       )① **整数类型**(       )浮点数类型(     ))字符串类型((     ))布尔类型((   [Python 中数据类型之间的转换]   [&quot;eval() 函数的使用&quot;]   [了解不同的进制数]   [掌握 Python 中常用的运算符及优">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-03T03:38:26.000Z">
+<meta property="article:modified_time" content="2024-04-09T06:29:19.740Z">
+<meta property="article:author" content="Helen Zhang">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.jpeg">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo.jpeg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Python-一级3</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">魔女</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i
+      class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+          <li><a href="/">
+              Home
+            </a></li>
+          
+          <li><a href="/about/">
+              About
+            </a></li>
+          
+          <li><a href="/archives/">
+              Writing
+            </a></li>
+          
+          <li><a href="/tags/">
+              Tags
+            </a></li>
+          
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">
+              Projects
+            </a></li>
+          
+      </ul>
+    </span>
+    <br />
+    <span id="actions">
+      <ul>
+        
+          <li><a class="icon" href="/2023/04/07/Python-%E4%B8%80%E7%BA%A74/"><i class="fa fa-chevron-left" aria-hidden="true"
+                onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+          
+            
+              <li><a class="icon" href="/2023/03/14/Python-%E4%B8%80%E7%BA%A72/"><i class="fa fa-chevron-right"
+                    aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a>
+              </li>
+              
+                <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
+                      class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();'
+                      onmouseout='$("#i-top").toggle();'></i></a></li>
+                <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true"
+                      onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();'
+                      onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&text=Python-一级3"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&title=Python-一级3"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&is_video=false&description=Python-一级3"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python-一级3&body=Check out this article: https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&title=Python-一级3"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&title=Python-一级3"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&title=Python-一级3"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&title=Python-一级3"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&name=Python-一级3&description=&lt;h1 id=&#34;Python-中基本数据类型&#34;&gt;&lt;a href=&#34;#Python-中基本数据类型&#34; class=&#34;headerlink&#34; title=&#34;Python 中基本数据类型&#34;&gt;&lt;/a&gt;&lt;center&gt;Python 中基本数据类型&lt;/center&gt;&lt;/h1&gt;&lt;pre class=&#34;mermaid&#34;&gt; mindmap
+ (本课知识点)
+  [Python 中基本数据类型]
+    ))数值类型((
+      )① **整数类型**(
+      )浮点数类型(
+    ))字符串类型((
+    ))布尔类型((
+  [Python 中数据类型之间的转换]
+  [&#34;eval() 函数的使用&#34;]
+  [了解不同的进制数]
+  [掌握 Python 中常用的运算符及优先级]&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Python 是弱类型的动态语言&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;数值类型&#34;&gt;&lt;a href=&#34;#数值类型&#34; class=&#34;headerlink&#34; title=&#34;数值类型&#34;&gt;&lt;/a&gt;数值类型&lt;/h2&gt;&lt;h3 id=&#34;整数类型&#34;&gt;&lt;a href=&#34;#整数类型&#34; class=&#34;headerlink&#34; title=&#34;整数类型&#34;&gt;&lt;/a&gt;整数类型&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;整数类型表示的数值是不包含小数的数值，包括正整数、负整数和零&lt;br&gt;理论上来讲，整数的取值范围是从 &lt;span class=&#34;custom-box custom-box-393&#34;&gt;$+\infty$ ~ $-\infty$&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;custom-box custom-box-939&#34;&gt;【电子学会三级考试内容】：能够进行二进制、十进制以及十六进制之间的转换；&lt;/span&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;进制类型&lt;/th&gt;
+&lt;th&gt;引导符号&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;十进制&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;td&gt;123&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;八进制&lt;/td&gt;
+&lt;td&gt;0o或0O&lt;/td&gt;
+&lt;td&gt;由0-7数字组成，如0o712&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;二进制&lt;/td&gt;
+&lt;td&gt;0b或0B&lt;/td&gt;
+&lt;td&gt;由0-1数字组成，如0b0101&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;十六进制&lt;/td&gt;
+&lt;td&gt;0x或OX&lt;/td&gt;
+&lt;td&gt;由0-9和a-f/A-F 组成，如 0x987a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;num = &lt;span class=&#34;number&#34;&gt;68&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 十进制数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;num_0b = &lt;span class=&#34;number&#34;&gt;0b1000100&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 二进制&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;num_0x = &lt;span class=&#34;number&#34;&gt;0x44&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 十六进制&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;num_0o = &lt;span class=&#34;number&#34;&gt;0o104&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 八进制&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(num) &lt;span class=&#34;comment&#34;&gt;# 68&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(num_0b) &lt;span class=&#34;comment&#34;&gt;# 68&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(num_0x) &lt;span class=&#34;comment&#34;&gt;# 68&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(num_0o) &lt;span class=&#34;comment&#34;&gt;# 68&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;浮点数类型&#34;&gt;&lt;a href=&#34;#浮点数类型&#34; class=&#34;headerlink&#34; title=&#34;浮点数类型&#34;&gt;&lt;/a&gt;浮点数类型&lt;/h3&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-%E4%B8%AD%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">Python 中基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">数值类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">整数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">浮点数类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">字符串类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%EF%BC%88%E3%80%90%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9A%E4%BA%94%E7%BA%A7%E8%80%83%E8%AF%95%E5%86%85%E5%AE%B9%E3%80%91%E2%80%94%E2%80%94-%E6%8E%8C%E6%8F%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BD%AC%E4%B9%89%E7%AC%A6%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">转义字符（【电子学会五级考试内容】—— 掌握字符串的转义符）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%AD%97%E7%AC%A6%E2%80%94%E2%80%94%E4%BD%BF%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E5%A4%B1%E6%95%88%E7%9A%84%E5%AD%97%E7%AC%A6-r%E6%88%96R"><span class="toc-number">1.2.2.</span> <span class="toc-text">原字符——使转义字符失效的字符 r或R</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.3.</span> <span class="toc-text">字符串索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%87%E7%89%87%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.4.</span> <span class="toc-text">字符串切片操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.5.</span> <span class="toc-text">常用的字符串操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">布尔类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B"><span class="toc-number">1.4.</span> <span class="toc-text">数据类型检测</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="header">
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Python-一级3
+    </h1>
+
+
+
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">
+            魔女
+                    
+          </span>
+        </span>
+        
+    <div class="postdate">
+        <time datetime="2023-04-03T03:38:26.000Z" itemprop="datePublished">2023-04-03</time>
+    </div>
+
+
+          
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+      </div>
+  </header>
+  
+
+    <div class="content" itemprop="articleBody">
+      <h1 id="Python-中基本数据类型"><a href="#Python-中基本数据类型" class="headerlink" title="Python 中基本数据类型"></a><center>Python 中基本数据类型</center></h1><pre class="mermaid"> mindmap
+ (本课知识点)
+  [Python 中基本数据类型]
+    ))数值类型((
+      )① **整数类型**(
+      )浮点数类型(
+    ))字符串类型((
+    ))布尔类型((
+  [Python 中数据类型之间的转换]
+  ["eval() 函数的使用"]
+  [了解不同的进制数]
+  [掌握 Python 中常用的运算符及优先级]</pre>
+
+<blockquote>
+<p>Python 是弱类型的动态语言</p>
+</blockquote>
+<h2 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h2><h3 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h3><blockquote>
+<p>整数类型表示的数值是不包含小数的数值，包括正整数、负整数和零<br>理论上来讲，整数的取值范围是从 <span class='custom-box custom-box-393'>$+\infty$ ~ $-\infty$</span></p>
+</blockquote>
+<p><span class='custom-box custom-box-939'>【电子学会三级考试内容】：能够进行二进制、十进制以及十六进制之间的转换；</span></p>
+<table>
+<thead>
+<tr>
+<th>进制类型</th>
+<th>引导符号</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>十进制</td>
+<td>无</td>
+<td>123</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td>0o或0O</td>
+<td>由0-7数字组成，如0o712</td>
+</tr>
+<tr>
+<td>二进制</td>
+<td>0b或0B</td>
+<td>由0-1数字组成，如0b0101</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>0x或OX</td>
+<td>由0-9和a-f/A-F 组成，如 0x987a</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">68</span> <span class="comment"># 十进制数</span></span><br><span class="line">num_0b = <span class="number">0b1000100</span> <span class="comment"># 二进制</span></span><br><span class="line">num_0x = <span class="number">0x44</span> <span class="comment"># 十六进制</span></span><br><span class="line">num_0o = <span class="number">0o104</span> <span class="comment"># 八进制</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(num) <span class="comment"># 68</span></span><br><span class="line"><span class="built_in">print</span>(num_0b) <span class="comment"># 68</span></span><br><span class="line"><span class="built_in">print</span>(num_0x) <span class="comment"># 68</span></span><br><span class="line"><span class="built_in">print</span>(num_0o) <span class="comment"># 68</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="浮点数类型"><a href="#浮点数类型" class="headerlink" title="浮点数类型"></a>浮点数类型</h3><blockquote>
+<p>表示带有小数点的数值，由整数部分和小数部分组成。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">version = <span class="number">3.5</span></span><br><span class="line"><span class="built_in">print</span>(version) <span class="comment"># 3.5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 科学计数法</span></span><br><span class="line">num = <span class="number">1E1</span> <span class="comment"># 1*10^1</span></span><br><span class="line"><span class="built_in">print</span>(num) <span class="comment"># 10</span></span><br></pre></td></tr></table></figure>
+<p><span class='custom-box custom-box-933'>两个浮点类型的数进行运算时，有一定概率运算结果后增加一些不确定的尾数</span></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">0.1</span> + <span class="number">0.2</span></span><br><span class="line"><span class="built_in">print</span>(num) <span class="comment"># 0.30000000000000004</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>复数：Python 中的复数，与数学中的复数形式完全一致，由实数和虚数组成<br>Python 中的实数部分使用 .real 表示，虚数部分使用 .imag 表示</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">123</span> + <span class="number">456j</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;实数部分&#x27;</span>, x.real) <span class="comment">#实数部分 123.0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;虚数部分&#x27;</span>, x.imag) <span class="comment">#虚数部分 456.0</span></span><br></pre></td></tr></table></figure>
+<p>整数与浮点数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">length = <span class="number">10</span></span><br><span class="line">length_f = <span class="number">10.0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;length 数据类型&#x27;</span>, <span class="built_in">type</span>(length)) <span class="comment"># int</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;length 数据类型&#x27;</span>, <span class="built_in">type</span>(length_f)) <span class="comment"># float</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><blockquote>
+<p>字符串是连续的字符序列，可以识别计算机所能识别的一切字符。<br>字符串的界定符：单引号，双引号，三引号<br><span class='custom-box custom-box-933'>注意：引号不能交叉使用。即不能 <code>&#39;hello&quot;</code>, <code>&quot;hello&#39;</code></span></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;Guido van Rossum&#x27;</span></span><br><span class="line">college = <span class="string">&quot;阿姆斯特丹大学&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name, college) <span class="comment"># Guido van Rossum 阿姆斯特丹大学</span></span><br><span class="line"></span><br><span class="line">info_python = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">  name: Guido van Rossum</span></span><br><span class="line"><span class="string">  college: 阿斯特丹大学</span></span><br><span class="line"><span class="string">  citizenship: America, Dutch</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">info_scratch = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">  name: Mitchel Resnick,</span></span><br><span class="line"><span class="string">  college: 麻省理工大学</span></span><br><span class="line"><span class="string">  citizenship: America</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">  name: Guido van Rossum</span></span><br><span class="line"><span class="string">  college: 阿斯特丹大学</span></span><br><span class="line"><span class="string">  citizenship: America, Dutch</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(info_python)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">  name: Mitchel Resnick,</span></span><br><span class="line"><span class="string">  college: 麻省理工大学</span></span><br><span class="line"><span class="string">  citizenship: America</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(info_scratch)</span><br></pre></td></tr></table></figure>
+
+<h3 id="转义字符（【电子学会五级考试内容】——-掌握字符串的转义符）"><a href="#转义字符（【电子学会五级考试内容】——-掌握字符串的转义符）" class="headerlink" title="转义字符（【电子学会五级考试内容】—— 掌握字符串的转义符）"></a>转义字符（<span class='custom-box custom-box-939'>【电子学会五级考试内容】—— 掌握字符串的转义符</span>）</h3><table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\n</td>
+<td>换行符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>水平制表位，用于横向跳到下一个制表位</td>
+</tr>
+<tr>
+<td>\‘</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>\“</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>反斜杠</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>\n 换行符</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">  题目：打印输出以下两位程序设计者姓名：</span></span><br><span class="line"><span class="string">  1.  Mitchel Resnick</span></span><br><span class="line"><span class="string">  2.  Guido van Rossum</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;1. Mitchel Resnick&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;2. Guido van Rossum&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;---------------------&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">1.  Mitchel Resnick</span></span><br><span class="line"><span class="string">2.  Guido van Rossum</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;---------------------&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用转义字符 \n 实现</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1.  Mitchel Resnick \n2.  Guido van Rossum&quot;</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>&#39; 与 &quot;</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Guido van Rossum said:\&quot;we recommend v-3.5.2.\&quot;&quot;</span>) <span class="comment"># Guido van Rossum said:&quot;we recommend v-3.5.2&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Guido van Rossum said:\&quot;use single quotation marks(\&#x27;\&#x27;),plase!\&quot;&quot;</span>) <span class="comment">#Guido van Rossum said:&quot;use single quotation marks(&#x27;&#x27;),plase!&quot;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>\t 制表位 —— 用于横向跳到下一个制表位</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello\tPython!&#x27;</span>) <span class="comment">#hello	Python!</span></span><br><span class="line"><span class="comment"># hello 与 python 之间间距是几个字符</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;00000000000000&#x27;</span>) <span class="comment">#空 3 个字符</span></span><br></pre></td></tr></table></figure>
+<h3 id="原字符——使转义字符失效的字符-r或R"><a href="#原字符——使转义字符失效的字符-r或R" class="headerlink" title="原字符——使转义字符失效的字符 r或R"></a>原字符——使转义字符失效的字符 r或R</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以用还原输出转义字符</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">r&#x27;\\ 表示转义反斜杠&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串索引"><a href="#字符串索引" class="headerlink" title="字符串索引"></a>字符串索引</h3><blockquote>
+<p>字符串又被称为有序的字符序列，不可变的字符序列，对字符串某个字符的检索称为索引</p>
+</blockquote>
+<table style="background:#fff;color:#333;">
+<tr>
+<td colspan="15" style="color: #a33;text-align: center;">$\longleftarrow{反向递减序号}$</td>
+</tr>
+<tr>
+<td style="border: solid 1px #efefef">-16</td>
+  <td style="border: solid 1px #efefef">-15</td>
+  <td style="border: solid 1px #efefef">-14</td>
+  <td style="border: solid 1px #efefef">-13</td>
+  <td style="border: solid 1px #efefef">-12</td>
+  <td style="border: solid 1px #efefef">-11</td>
+  <td style="border: solid 1px #efefef">-10</td>
+  <td style="border: solid 1px #efefef">-9</td>
+  <td style="border: solid 1px #efefef">-8</td>
+  <td style="border: solid 1px #efefef">-7</td>
+  <td style="border: solid 1px #efefef">-6</td>
+  <td style="border: solid 1px #efefef">-5</td>
+  <td style="border: solid 1px #efefef">-4</td>
+  <td style="border: solid 1px #efefef">-3</td>
+  <td style="border: solid 1px #efefef">-2</td>
+  <td style="border: solid 1px #efefef">-1</td> 
+</tr>
+<tr>
+  <td style="border: solid 1px #efefef">G</td>
+  <td style="border: solid 1px #efefef">u</td>
+  <td style="border: solid 1px #efefef">i</td>
+  <td style="border: solid 1px #efefef">d</td>
+  <td style="border: solid 1px #efefef">o</td>
+  <td style="border: solid 1px #efefef"></td>
+  <td style="border: solid 1px #efefef">v</td>
+  <td style="border: solid 1px #efefef">a</td>
+  <td style="border: solid 1px #efefef">n</td>
+  <td style="border: solid 1px #efefef"></td>
+  <td style="border: solid 1px #efefef">R</td>
+  <td style="border: solid 1px #efefef">o</td>
+  <td style="border: solid 1px #efefef">s</td>
+  <td style="border: solid 1px #efefef">s</td>
+  <td style="border: solid 1px #efefef">u</td> 
+  <td style="border: solid 1px #efefef">m</td>
+</tr>
+<tr>
+  <td style="border: solid 1px #efefef">0</td>
+  <td style="border: solid 1px #efefef">1</td>
+  <td style="border: solid 1px #efefef">2</td>
+  <td style="border: solid 1px #efefef">3</td>
+  <td style="border: solid 1px #efefef">4</td>
+  <td style="border: solid 1px #efefef">5</td>
+  <td style="border: solid 1px #efefef">6</td>
+  <td style="border: solid 1px #efefef">7</td>
+  <td style="border: solid 1px #efefef">8</td>
+  <td style="border: solid 1px #efefef">9</td>
+  <td style="border: solid 1px #efefef">10</td>
+  <td style="border: solid 1px #efefef">11</td>
+  <td style="border: solid 1px #efefef">12</td>
+  <td style="border: solid 1px #efefef">13</td>
+  <td style="border: solid 1px #efefef">14</td> 
+  <td style="border: solid 1px #efefef">15</td>
+</tr>
+<tr>
+<td colspan="15" style="color: #a33;text-align: center;">$\longrightarrow{正向递增序号}$</td>
+</tr>
+</table>
+
+<hr>
+<p><span class='custom-box custom-box-933'>课堂作业：</span> 取出 <code>Guido van Rossum</code> 姓的第一个字母</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;Guido van Rossum&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">10</span>]) <span class="comment">#R</span></span><br><span class="line"><span class="built_in">print</span>(name[-<span class="number">6</span>]) <span class="comment">#R</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串切片操作"><a href="#字符串切片操作" class="headerlink" title="字符串切片操作"></a>字符串切片操作</h3><blockquote>
+<p>对字符串中的某个子串或区间的检索称为切片<br>切片语法结构 <code>字符串或字符串变量[N:M]</code><br><font color='red'>注意：切片不包含 M 位</font><br><span class='custom-box custom-box-933'>课堂作业：</span>请截取 <code>Guido van Rossum</code> 的姓</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;Guido van Rossum&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">10</span>:<span class="number">15</span>]) <span class="comment">#Rossu 所以 M 要输入大于 15 的任意数</span></span><br><span class="line"><span class="built_in">print</span>(name[<span class="number">10</span>:]) <span class="comment">#M 为空，默认截取到结尾</span></span><br><span class="line"><span class="built_in">print</span>(name[:<span class="number">4</span>]) <span class="comment">#N 为空，默认从第一个字母开始切</span></span><br></pre></td></tr></table></figure>
+<p><span class='custom-box custom-box-933'>思考：</span></p>
+<ul>
+<li>世界那么大，我想去看看。执行[7:-3]的结果是什么？</li>
+</ul>
+<h3 id="常用的字符串操作"><a href="#常用的字符串操作" class="headerlink" title="常用的字符串操作"></a>常用的字符串操作</h3><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x+y</td>
+<td>连接字符串 x，y</td>
+</tr>
+<tr>
+<td>x<em>n or n</em>x</td>
+<td>复制 n 次 x</td>
+</tr>
+<tr>
+<td>x in str</td>
+<td>x 是否是 str 的子串，是返回 true，否则返回 false</td>
+</tr>
+</tbody></table>
+<p><span class='custom-box custom-box-933'>课堂作业：</span>请说出龟叔的姓名</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firstName = <span class="string">&#x27;Guido van&#x27;</span></span><br><span class="line">lastName = <span class="string">&#x27;Rossum&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;龟叔的姓名是：&#x27;</span>+ firstName + <span class="string">&#x27; &#x27;</span> + lastName)</span><br></pre></td></tr></table></figure>
+<p><span class='custom-box custom-box-933'>课堂作业：</span>重要的事情说三遍，请说出龟叔的姓</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firstName = <span class="string">&#x27;Guido van&#x27;</span></span><br><span class="line">lastName = <span class="string">&#x27;Rossum &#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;龟叔姓：&#x27;</span> + lastName * <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p><span class='custom-box custom-box-933'>课堂作业：</span>龟叔 <code>Guido van Rossum</code> 的姓是不是 <code>Rossum</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">&#x27;Guido van Rossum&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Rossum&#x27;</span> <span class="keyword">in</span> name) <span class="comment">#True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><blockquote>
+<p>布尔类型是用来表示 “真” 值 或 “假” 值数据类型，其标识符为 True 或 False</p>
+</blockquote>
+<p><span class='custom-box custom-box-393'>True 表示整数 1，False 表示 0</span></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 验证 True 表示整数 1，False 表示 0</span></span><br><span class="line">t = <span class="literal">True</span></span><br><span class="line">f = <span class="literal">False</span></span><br><span class="line"><span class="built_in">print</span>(t + <span class="number">1</span>) <span class="comment">#2</span></span><br><span class="line"><span class="built_in">print</span>(f + <span class="number">1</span>) <span class="comment">#1</span></span><br></pre></td></tr></table></figure>
+
+<p>布尔值为 False 的情况如下：</p>
+<ul>
+<li>False 或 None</li>
+<li>数值 0, 0.0 虚数 0</li>
+<li>空序列，包含空字符串，空元组，空列表，空字典，空集合等</li>
+<li>自定义对象实例，该对象的 <strong>bool</strong>() 方法返回 False，<strong>len</strong>() 方法返回 0</li>
+</ul>
+<h2 id="数据类型检测"><a href="#数据类型检测" class="headerlink" title="数据类型检测"></a>数据类型检测</h2><blockquote>
+<p>type(parameter) 检测参数类型</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="string">&#x27;&#x27;</span>)) <span class="comment">#&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="number">0</span>)) <span class="comment">#&lt;class &#x27;int&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="literal">False</span>)) <span class="comment">#&lt;class &#x27;bool&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><span class='custom-box custom-box-933'>homework</span></p>
+<ul>
+<li>思考：3.0，3，’3.0’, ‘3’ 是不是都一样？</li>
+<li>以下不是 Python 内置数据类型的是(char,int,float,str)</li>
+<li>判断：字符串是用一对双引号“”或一对单引号‘’，括起来的零个或多个字符串</li>
+<li>判断：字符串是字符的序列，也是序列类型的一种</li>
+<li>判断：字符串使用[]进行索引和切片的</li>
+<li>判断：Python 字符串的切片方式是[n,m]，包括 m</li>
+<li>判断：赋值与二元操作符可以组合，如 &amp;=</li>
+<li>判断：a,b=b,a 可以实现 a 和 b 值的互换</li>
+<li>判断：a,b,c=b,c,a 是合法的</li>
+</ul>
+
+    </div>
+</article>
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-%E4%B8%AD%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">Python 中基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">数值类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">整数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">浮点数类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">字符串类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%EF%BC%88%E3%80%90%E7%94%B5%E5%AD%90%E5%AD%A6%E4%BC%9A%E4%BA%94%E7%BA%A7%E8%80%83%E8%AF%95%E5%86%85%E5%AE%B9%E3%80%91%E2%80%94%E2%80%94-%E6%8E%8C%E6%8F%A1%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BD%AC%E4%B9%89%E7%AC%A6%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">转义字符（【电子学会五级考试内容】—— 掌握字符串的转义符）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%AD%97%E7%AC%A6%E2%80%94%E2%80%94%E4%BD%BF%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E5%A4%B1%E6%95%88%E7%9A%84%E5%AD%97%E7%AC%A6-r%E6%88%96R"><span class="toc-number">1.2.2.</span> <span class="toc-text">原字符——使转义字符失效的字符 r或R</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.3.</span> <span class="toc-text">字符串索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%87%E7%89%87%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.4.</span> <span class="toc-text">字符串切片操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.5.</span> <span class="toc-text">常用的字符串操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">布尔类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B"><span class="toc-number">1.4.</span> <span class="toc-text">数据类型检测</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&text=Python-一级3"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&title=Python-一级3"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&is_video=false&description=Python-一级3"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Python-一级3&body=Check out this article: https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&title=Python-一级3"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&title=Python-一级3"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&title=Python-一级3"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&title=Python-一级3"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://helenzhanglp.github.io/2023/04/03/Python-%E4%B8%80%E7%BA%A73/&name=Python-一级3&description=&lt;h1 id=&#34;Python-中基本数据类型&#34;&gt;&lt;a href=&#34;#Python-中基本数据类型&#34; class=&#34;headerlink&#34; title=&#34;Python 中基本数据类型&#34;&gt;&lt;/a&gt;&lt;center&gt;Python 中基本数据类型&lt;/center&gt;&lt;/h1&gt;&lt;pre class=&#34;mermaid&#34;&gt; mindmap
+ (本课知识点)
+  [Python 中基本数据类型]
+    ))数值类型((
+      )① **整数类型**(
+      )浮点数类型(
+    ))字符串类型((
+    ))布尔类型((
+  [Python 中数据类型之间的转换]
+  [&#34;eval() 函数的使用&#34;]
+  [了解不同的进制数]
+  [掌握 Python 中常用的运算符及优先级]&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Python 是弱类型的动态语言&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;数值类型&#34;&gt;&lt;a href=&#34;#数值类型&#34; class=&#34;headerlink&#34; title=&#34;数值类型&#34;&gt;&lt;/a&gt;数值类型&lt;/h2&gt;&lt;h3 id=&#34;整数类型&#34;&gt;&lt;a href=&#34;#整数类型&#34; class=&#34;headerlink&#34; title=&#34;整数类型&#34;&gt;&lt;/a&gt;整数类型&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;整数类型表示的数值是不包含小数的数值，包括正整数、负整数和零&lt;br&gt;理论上来讲，整数的取值范围是从 &lt;span class=&#34;custom-box custom-box-393&#34;&gt;$+\infty$ ~ $-\infty$&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;custom-box custom-box-939&#34;&gt;【电子学会三级考试内容】：能够进行二进制、十进制以及十六进制之间的转换；&lt;/span&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;进制类型&lt;/th&gt;
+&lt;th&gt;引导符号&lt;/th&gt;
+&lt;th&gt;示例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;十进制&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;td&gt;123&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;八进制&lt;/td&gt;
+&lt;td&gt;0o或0O&lt;/td&gt;
+&lt;td&gt;由0-7数字组成，如0o712&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;二进制&lt;/td&gt;
+&lt;td&gt;0b或0B&lt;/td&gt;
+&lt;td&gt;由0-1数字组成，如0b0101&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;十六进制&lt;/td&gt;
+&lt;td&gt;0x或OX&lt;/td&gt;
+&lt;td&gt;由0-9和a-f/A-F 组成，如 0x987a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;num = &lt;span class=&#34;number&#34;&gt;68&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 十进制数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;num_0b = &lt;span class=&#34;number&#34;&gt;0b1000100&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 二进制&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;num_0x = &lt;span class=&#34;number&#34;&gt;0x44&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 十六进制&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;num_0o = &lt;span class=&#34;number&#34;&gt;0o104&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# 八进制&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(num) &lt;span class=&#34;comment&#34;&gt;# 68&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(num_0b) &lt;span class=&#34;comment&#34;&gt;# 68&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(num_0x) &lt;span class=&#34;comment&#34;&gt;# 68&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(num_0o) &lt;span class=&#34;comment&#34;&gt;# 68&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;浮点数类型&#34;&gt;&lt;a href=&#34;#浮点数类型&#34; class=&#34;headerlink&#34; title=&#34;浮点数类型&#34;&gt;&lt;/a&gt;浮点数类型&lt;/h3&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2024
+      Helen Zhang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        
+          <li><a href="/">
+              Home
+            </a></li>
+          
+          <li><a href="/about/">
+              About
+            </a></li>
+          
+          <li><a href="/archives/">
+              Writing
+            </a></li>
+          
+          <li><a href="/tags/">
+              Tags
+            </a></li>
+          
+          <li><a target="_blank" rel="noopener" href="https://github.com/HelenZhangLP">
+              Projects
+            </a></li>
+          
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  <!-- <script src='https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js'></script> -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({ theme: 'default' });
+    }
+  </script>
+  
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
